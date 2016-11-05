@@ -76,7 +76,7 @@ class LiveHash: UIViewController, UITextViewDelegate {
     
     func hasChanged() {
         print("I've just been changed")
-        
+    
         guard let hashString = nestedTableViewController.hashTextView.text else {
             //log this error
             return
@@ -87,7 +87,7 @@ class LiveHash: UIViewController, UITextViewDelegate {
             return
         }
         
-        guard
+       /* guard
             let cellColor0 = nestedTableViewController.tableView.cellForRow(at: IndexPath(row: 0, section: 3)) as? ColorCellTableView,
             let cellColor1 = nestedTableViewController.tableView.cellForRow(at: IndexPath(row: 1, section: 3)) as? ColorCellTableView,
             let cellColor2 = nestedTableViewController.tableView.cellForRow(at: IndexPath(row: 2, section: 3)) as? ColorCellTableView,
@@ -97,14 +97,16 @@ class LiveHash: UIViewController, UITextViewDelegate {
             //log this error
             return
         }
-    
+        */
+        
         let colorItem = HashColorItem(hash: hashString.sha1())
+        nestedTableViewController.currentColor = colorItem
         let colorArray = colorItem.extractStringColors(hash: colorItem.hashString, result: [])
         
         
 
         
-        print(cell.textLabel)
+        
         
         cell.textLabel?.text = colorItem.hashString
     
@@ -141,28 +143,7 @@ class LiveHash: UIViewController, UITextViewDelegate {
                                          blue: Float(colorItem.colors![4].blue) / 255,
                                          alpha: 1.0)
         
-        cellColor0.colorCode.text = "#\(colorArray[0])"
-        cellColor0.colorPreview.backgroundColor = color0Color
-        cellColor0.colorFriendlyName.text = "A funny name"
-        
-        cellColor1.colorCode.text = "#\(colorArray[1])"
-        cellColor1.colorPreview.backgroundColor = color1Color
-        cellColor1.colorFriendlyName.text = "A funny name"
-        
-        cellColor2.colorCode.text = "#\(colorArray[2])"
-        cellColor2.colorPreview.backgroundColor = color2Color
-        cellColor2.colorFriendlyName.text = "A funny name"
-        
-        cellColor3.colorCode.text = "#\(colorArray[3])"
-        cellColor3.colorPreview.backgroundColor = color3Color
-        cellColor3.colorFriendlyName.text = "A funny name"
-        
-        cellColor4.colorCode.text = "#\(colorArray[4])"
-        cellColor4.colorPreview.backgroundColor = color4Color
-        cellColor4.colorFriendlyName.text = "A funny name"
-        
 
-        
         color0.backgroundColor = color0Color
         color1.backgroundColor = color1Color
         color2.backgroundColor = color2Color
@@ -174,6 +155,9 @@ class LiveHash: UIViewController, UITextViewDelegate {
         color2.constraints[0].constant = CGFloat(width2)
         color3.constraints[0].constant = CGFloat(width3)
         color4.constraints[0].constant = CGFloat(width4)
+        
+        nestedTableViewController.tableView.reloadData()
+        nestedTableViewController.hashTextView.becomeFirstResponder()
  
     }
     

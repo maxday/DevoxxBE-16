@@ -19,16 +19,36 @@ class HashTextTable: UITableViewController, UITextViewDelegate {
     @IBOutlet var color3: UIView!
     @IBOutlet var color4: UIView!
     
+    var currentColor:HashColorItem?
+    
     override func viewDidLoad() {
         hashTextView.textColor = UIColor.lightGray
         hashTextView.text = "Type your thoughts here..."
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "viewColorDetail") {
             if let colorDetail = segue.destination as? ColorDetail {
-                colorDetail.updateBackgroundColor()
+                
+                let currentSelectedColorIndex = tableView.indexPathForSelectedRow?.row
+                let currentColor = self.currentColor?.extractColors(hash: (self.currentColor?.hashString)!, result: [])[currentSelectedColorIndex!].toUIColor()
+                colorDetail.updateBackgroundColor(color: currentColor!)
             }
         }
     }
+    
+    
+    
+    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let cellColor = tableView.cellForRow(at: indexPath) as? ColorCellTableView {
+            cellColor.colorCode.text = "#\(currentColor?.extractStringColors(hash: (currentColor?.hashString)!, result: [])[indexPath.row] ?? "")"
+            cellColor.colorPreview.backgroundColor = currentColor?.extractColors(hash: (currentColor?.hashString)!, result: [])[indexPath.row].toUIColor()
+            cellColor.colorFriendlyName.text = "Color \(indexPath.row) : "
+        }
+    }
+    
+    
+    
 }

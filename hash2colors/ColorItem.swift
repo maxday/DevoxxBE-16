@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public struct ColorItem {
     
@@ -20,6 +21,13 @@ public struct ColorItem {
         self.green = Int(green)
         self.blue = Int(blue)
         self.size = Int(alpha)
+    }
+    
+    public func toUIColor() -> UIColor {
+        return UIColor(colorLiteralRed: Float(red) / 255,
+                                  green: Float(green) / 255,
+                                  blue: Float(blue) / 255,
+                                  alpha: 1.0)
     }
     
 }

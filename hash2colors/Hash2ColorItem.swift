@@ -72,6 +72,18 @@ public struct HashColorItem {
         }
         return r
     }
+    
+    public func getWidth(maxSize : Float) -> [Int] {
+        var returnArray = [Int]()
+        var currentSummedWidth = 0
+        for i in 0...(colors?.count)!-1 {
+            let currentWidth = Int((Float((colors?[i].size)!) * maxSize) / Float(self.totalSize!))
+            currentSummedWidth += currentWidth
+            returnArray.append(currentWidth)
+        }
+        returnArray.append(Int(maxSize)-currentSummedWidth)
+        return returnArray
+    }
 }
 
 extension HashColorItem : DictionaryConvertible {

@@ -41,20 +41,7 @@ extension ColorItem {
     }
 }
 
-extension CompanyItem {
-    init?(dictionary: JSONDictionary) {
-        guard let percentAnswers = dictionary["percentAnswers"] as? Int,
-            let name = dictionary["name"] as? String,
-            let averageAnswersTimeInSec = dictionary["averageAnswersTimeInSec"] as? Int,
-            let nbTweetsToday = dictionary["nbTweetsToday"] as? Int else {
-                return nil
-        }
-        self.percentAnswers = percentAnswers
-        self.name = name
-        self.nbTweetsToday = nbTweetsToday
-        self.averageAnswersTimeInSec = averageAnswersTimeInSec
-    }
-}
+
 
 struct Resource<A> {
     let url: NSURL
@@ -71,12 +58,7 @@ extension Resource {
     }
 }
 
-extension CompanyItem {
-    static let all = Resource<[CompanyItem]>(url: NSURL(string :"http://demospark.eu-gb.mybluemix.net/api/stats")!, parseJSON: { json in
-        guard let dictionaries = json as? [JSONDictionary] else { return nil }
-        return dictionaries.flatMap(CompanyItem.init)
-    })
-}
+
 
 extension HashColorItem {
     static let all = Resource<[String]>(url: NSURL(string :"http://localhost:8080/hash/list")!, parseJSON: { json in
