@@ -24,4 +24,11 @@ class HashTextTable: UITableViewController, UITextViewDelegate {
         hashTextView.text = "Type your thoughts here..."
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "viewColorDetail") {
+            if let colorDetail = segue.destination as? ColorDetail {
+                colorDetail.updateBackgroundColor()
+            }
+        }
+    }
 }

@@ -18,4 +18,8 @@ class ColorDetail: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .red
     }
+    
+    func updateBackgroundColor() {
+        self.view.backgroundColor = .green
+    }
 }

@@ -11,13 +11,14 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-    var r: [HashColorItem]?
+    var r: [String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view, typically from a nib.
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         Webservice().load(resource: HashColorItem.all) { result in
             print("log all companies from bluemix backend")
             print(result)
@@ -25,8 +26,6 @@ class ViewController: UITableViewController {
             self.tableView.reloadData()
             print("----")
         }
-        print("toto")
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +44,7 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DefaultCell")!
         cell.textLabel?.font = UIFont(name: "Arial", size: 10.0)
-        cell.textLabel?.text = r?[indexPath.row].hashString
+        cell.textLabel?.text = r?[indexPath.row]
         return cell
     }
 

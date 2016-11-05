@@ -47,6 +47,14 @@ class LiveHash: UIViewController, UITextViewDelegate {
                     let alert = UIAlertController(title: "Saved !", message: "Your hash has been successfully saved", preferredStyle: UIAlertControllerStyle.alert)
                     alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
+                    
+                    Webservice().load(resource: HashColorItem.all) { result in
+                        print("log all companies from bluemix backend")
+                        print(result)
+                        print("----")
+                    }
+                    print("toto")
+                    
                 }
             }
             

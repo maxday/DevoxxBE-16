@@ -79,23 +79,24 @@ extension CompanyItem {
 }
 
 extension HashColorItem {
-    static let all = Resource<[HashColorItem]>(url: NSURL(string :"http://localhost:8090/list")!, parseJSON: { json in
+    static let all = Resource<[String]>(url: NSURL(string :"http://localhost:8080/hash/list")!, parseJSON: { json in
         guard let dictionaries = json as? [JSONDictionary] else { return nil }
-        return dictionaries.flatMap(HashColorItem.init)
+        var returnArray = [String]()
+        for i in dictionaries {
+            returnArray.append((i["hash"] as? String)!)
+        }
+        return returnArray
     })
-    static let add = Resource<HashColorItem>(url: NSURL(string :"http://localhost:8090/hash/add/cf23df2207d99a74fbe169e3eba035e633b65d94")!, parseJSON: { json in
-        guard let dictionary = json as? JSONDictionary else { return nil }
-        return HashColorItem(dictionary:dictionary)
-    })
-    
-    static func add(hashString : String) -> Resource<HashColorItem> {
-        let a = Resource<HashColorItem>(
-            url: NSURL(string :"http://localhost:8090/hash/add/\(hashString)")!,
+        
+    static func add(hashString : String) -> Resource<String> {
+        let a = Resource<String>(
+            url: NSURL(string :"http://localhost:8080/hash/add/\(hashString)")!,
             parseJSON: {
                 json in
-                    print("http://localhost:8090/hash/add/\(hashString)")
+                    print("http://localhost:8080/hash/add/\(hashString)")
+                    print(json)
                     guard let dictionary = json as? JSONDictionary else { return nil }
-                return HashColorItem(dictionary:dictionary)
+                return dictionary["hash"] as? String
             }
         )
         return a

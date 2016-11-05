@@ -10,9 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="mbc-Pr-yQc">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Md6-J2-CCx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="o00-kh-pWb" customClass="ViewController" customModule="hash2colors" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mdR-GV-1U2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -33,10 +34,10 @@
                             <outlet property="delegate" destination="o00-kh-pWb" id="KSA-TE-jce"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="KuK-Ft-FND"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Md6-J2-CCx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-934" y="64"/>
+            <point key="canvasLocation" x="-367" y="126"/>
         </scene>
         <!--Add a hash-->
         <scene sceneID="fUn-gm-01h">
@@ -89,6 +90,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="0g6-FX-YnV" kind="relationship" relationship="viewControllers" id="80d-bg-4E6"/>
+                        <segue destination="o00-kh-pWb" kind="relationship" relationship="viewControllers" id="ZNs-Gz-S2b"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="elt-vX-H4I" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -133,7 +135,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="jkjk" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6lS-ml-vMc">
-                                                    <rect key="frame" x="0.0" y="0.0" width="1000" height="65.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -253,14 +255,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E23-Vz-qvu">
-                                                    <rect key="frame" x="964" y="8" width="28" height="27.5"/>
+                                                    <rect key="frame" x="339" y="8" width="28" height="27.5"/>
                                                     <color key="backgroundColor" red="0.64388158386603844" green="1" blue="0.87905078734621633" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="28" id="rQA-tU-P1l"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3J-10-Ykg">
-                                                    <rect key="frame" x="874" y="11" width="80" height="21.5"/>
+                                                    <rect key="frame" x="249" y="11" width="80" height="21.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="nlt-ev-9Yt"/>
                                                     </constraints>
@@ -285,7 +287,7 @@
                                             <outlet property="colorCode" destination="x3J-10-Ykg" id="Gf0-20-XcA"/>
                                             <outlet property="colorFriendlyName" destination="Dkj-Re-ro5" id="RRS-m3-QOf"/>
                                             <outlet property="colorPreview" destination="E23-Vz-qvu" id="D6u-2s-8Yc"/>
-                                            <segue destination="6CJ-v0-y10" kind="show" id="yzP-Pt-80B"/>
+                                            <segue destination="6CJ-v0-y10" kind="show" identifier="viewColorDetail" id="yzP-Pt-80B"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="L8V-i2-XR4" customClass="ColorCellTableView" customModule="hash2colors">
@@ -305,14 +307,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jCq-on-8FQ">
-                                                    <rect key="frame" x="964" y="8" width="28" height="27.5"/>
+                                                    <rect key="frame" x="339" y="8" width="28" height="27.5"/>
                                                     <color key="backgroundColor" red="0.64388158390000005" green="1" blue="0.87905078729999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="28" id="92u-zh-1iD"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uwf-fP-sll">
-                                                    <rect key="frame" x="874" y="11" width="80" height="21.5"/>
+                                                    <rect key="frame" x="249" y="11" width="80" height="21.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="buJ-6b-JGq"/>
                                                     </constraints>
@@ -337,7 +339,7 @@
                                             <outlet property="colorCode" destination="Uwf-fP-sll" id="klG-Bj-Kz9"/>
                                             <outlet property="colorFriendlyName" destination="uvs-Ry-PSO" id="jG5-Gu-OCF"/>
                                             <outlet property="colorPreview" destination="jCq-on-8FQ" id="Z5O-Uv-Bkr"/>
-                                            <segue destination="6CJ-v0-y10" kind="show" id="xRf-2k-NdU"/>
+                                            <segue destination="6CJ-v0-y10" kind="show" identifier="viewColorDetail" id="xRf-2k-NdU"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="55d-RD-8RP" customClass="ColorCellTableView" customModule="hash2colors">
@@ -357,14 +359,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2f-El-KAx">
-                                                    <rect key="frame" x="964" y="8" width="28" height="27.5"/>
+                                                    <rect key="frame" x="339" y="8" width="28" height="27.5"/>
                                                     <color key="backgroundColor" red="0.64388158390000005" green="1" blue="0.87905078729999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="28" id="z9G-tU-aKS"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vwl-fy-f7b">
-                                                    <rect key="frame" x="874" y="11" width="80" height="21.5"/>
+                                                    <rect key="frame" x="249" y="11" width="80" height="21.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="oqh-so-a25"/>
                                                     </constraints>
@@ -389,7 +391,7 @@
                                             <outlet property="colorCode" destination="Vwl-fy-f7b" id="KlX-OT-C3D"/>
                                             <outlet property="colorFriendlyName" destination="rDB-dm-X27" id="QkO-rz-IQb"/>
                                             <outlet property="colorPreview" destination="y2f-El-KAx" id="uwn-HO-GAM"/>
-                                            <segue destination="6CJ-v0-y10" kind="show" id="Lja-Cn-XPw"/>
+                                            <segue destination="6CJ-v0-y10" kind="show" identifier="viewColorDetail" id="Lja-Cn-XPw"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ktO-cN-cOg" customClass="ColorCellTableView" customModule="hash2colors">
@@ -409,14 +411,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z7J-kh-mdO">
-                                                    <rect key="frame" x="964" y="8" width="28" height="27.5"/>
+                                                    <rect key="frame" x="339" y="8" width="28" height="27.5"/>
                                                     <color key="backgroundColor" red="0.64388158390000005" green="1" blue="0.87905078729999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="28" id="j0s-WE-Lrj"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUB-fM-h9n">
-                                                    <rect key="frame" x="874" y="11" width="80" height="21.5"/>
+                                                    <rect key="frame" x="249" y="11" width="80" height="21.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="XOL-1K-PA5"/>
                                                     </constraints>
@@ -441,7 +443,7 @@
                                             <outlet property="colorCode" destination="bUB-fM-h9n" id="tLO-Rv-GTA"/>
                                             <outlet property="colorFriendlyName" destination="34S-RV-Rm9" id="13A-nS-96O"/>
                                             <outlet property="colorPreview" destination="Z7J-kh-mdO" id="Na2-Fb-Eqb"/>
-                                            <segue destination="6CJ-v0-y10" kind="show" id="8os-bg-kEj"/>
+                                            <segue destination="6CJ-v0-y10" kind="show" identifier="viewColorDetail" id="8os-bg-kEj"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Rxv-bP-bfm" customClass="ColorCellTableView" customModule="hash2colors">
@@ -461,14 +463,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rb9-Wa-6Cl">
-                                                    <rect key="frame" x="964" y="8" width="28" height="27.5"/>
+                                                    <rect key="frame" x="339" y="8" width="28" height="27.5"/>
                                                     <color key="backgroundColor" red="0.64388158390000005" green="1" blue="0.87905078729999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="28" id="Zd9-JL-iBs"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bs7-gp-6e9">
-                                                    <rect key="frame" x="874" y="11" width="80" height="21.5"/>
+                                                    <rect key="frame" x="249" y="11" width="80" height="21.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="JKz-m5-ARt"/>
                                                     </constraints>
@@ -493,7 +495,7 @@
                                             <outlet property="colorCode" destination="Bs7-gp-6e9" id="E5R-3B-rff"/>
                                             <outlet property="colorFriendlyName" destination="ibY-q5-g9T" id="ahe-3m-uOy"/>
                                             <outlet property="colorPreview" destination="Rb9-Wa-6Cl" id="Lyz-rY-geo"/>
-                                            <segue destination="6CJ-v0-y10" kind="show" id="MCy-QC-pyG"/>
+                                            <segue destination="6CJ-v0-y10" kind="show" identifier="viewColorDetail" id="MCy-QC-pyG"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -537,6 +539,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yzP-Pt-80B"/>
+        <segue reference="MCy-QC-pyG"/>
     </inferredMetricsTieBreakers>
 </document>
