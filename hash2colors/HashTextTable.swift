@@ -34,22 +34,20 @@ class HashTextTable: UITableViewController, UITextViewDelegate {
             if let colorDetail = segue.destination as? ColorDetail {
                 
                 let currentSelectedColorIndex = tableView.indexPathForSelectedRow?.row
-                let currentColor = self.currentColor?.colors?[currentSelectedColorIndex!].toUIColor()
+                let currentColor = self.currentColor?.getColors()[currentSelectedColorIndex!].toUIColor()
                 colorDetail.updateBackgroundColor(color: currentColor!)
             }
         }
     }
     
-    
-    
-    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let cellColor = tableView.cellForRow(at: indexPath) as? ColorCellTableView {
-            cellColor.colorCode.text = "#\(currentColor?.extractStringColors(hash: (currentColor?.hashString)!, result: [])[indexPath.row] ?? "")"
-            cellColor.colorPreview.backgroundColor = currentColor?.colors?[indexPath.row].toUIColor()
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        if let cellColor = cell as? ColorCellTableView {
+            cellColor.colorCode.text = "#o"
+            cellColor.colorPreview.backgroundColor = currentColor?.getColors()[indexPath.row].toUIColor()
             cellColor.colorFriendlyName.text = "Color \(indexPath.row) :"
         }
+        return cell
     }
-    
-    
     
 }

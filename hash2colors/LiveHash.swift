@@ -24,14 +24,6 @@ class LiveHash: UIViewController, UITextViewDelegate {
 
     var nestedTableViewController:HashTextTable!
 
-    var color0: UIView!
-    var color1: UIView!
-    var color2: UIView!
-    var color3: UIView!
-    var color4: UIView!
-
-    @IBOutlet var navBar: UINavigationBar!
-    
     @IBAction func saveHashBtn(_ sender: AnyObject) {
         print("saveBtn clicked")
         Webservice().load(resource: HashColorItem.add(hashString : (nestedTableViewController.tableView.cellForRow(at: IndexPath(row: 0, section: 1))?.textLabel?.text)!)) { result in
@@ -47,29 +39,12 @@ class LiveHash: UIViewController, UITextViewDelegate {
                     let alert = UIAlertController(title: "Saved !", message: "Your hash has been successfully saved", preferredStyle: UIAlertControllerStyle.alert)
                     alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
-                    
-                    Webservice().load(resource: HashColorItem.all) { result in
-                        print("log all companies from bluemix backend")
-                        print(result)
-                        print("----")
-                    }
-                    print("toto")
-                    
                 }
             }
             
         }
     }
- /*
-    @IBAction func saveHashBtn(_ sender: AnyObject) {
-        print("saveBtn clicked")
-    }
-    */
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-   
+
     override func viewDidAppear(_ animated: Bool) {
         hasChanged()
     }
@@ -92,25 +67,17 @@ class LiveHash: UIViewController, UITextViewDelegate {
             return
         }
         
+        guard let cellColorScheme = nestedTableViewController.tableView.cellForRow(at: IndexPath(row: 0, section: 2)) as? ColorSchemeTableViewCell else {
+            //log this error
+            return
+        }
+        
         nestedTableViewController.currentColor = colorItem
         cell.textLabel?.text = colorItem.hashString
-        
         let widthArray = colorItem.getWidth(maxSize: Float(self.view.bounds.width))
-        let colorArray = colorItem.extractColors()
-        
-        
-        color0.backgroundColor = colorArray[0].toUIColor()
-        color1.backgroundColor = colorArray[1].toUIColor()
-        color2.backgroundColor = colorArray[2].toUIColor()
-        color3.backgroundColor = colorArray[3].toUIColor()
-        color4.backgroundColor = colorArray[4].toUIColor()
-        
-        color0.constraints[0].constant = CGFloat(widthArray[0])
-        color1.constraints[0].constant = CGFloat(widthArray[1])
-        color2.constraints[0].constant = CGFloat(widthArray[2])
-        color3.constraints[0].constant = CGFloat(widthArray[3])
-        color4.constraints[0].constant = CGFloat(widthArray[4])
-        
+        let colorArray = colorItem.getColors().map({$0.toUIColor()})
+        cellColorScheme.feed(colorArray: colorArray, widthArray: widthArray)
+
         nestedTableViewController.tableView.reloadData()
         nestedTableViewController.hashTextView.becomeFirstResponder()
  
@@ -135,11 +102,6 @@ class LiveHash: UIViewController, UITextViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         nestedTableViewController.hashTextView.delegate = self
-        color0 = nestedTableViewController.color0
-        color1 = nestedTableViewController.color1
-        color2 = nestedTableViewController.color2
-        color3 = nestedTableViewController.color3
-        color4 = nestedTableViewController.color4
     }
     
     

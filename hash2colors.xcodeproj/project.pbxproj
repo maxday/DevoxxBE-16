@@ -22,7 +22,6 @@
 		E1D38BE01DAAA46D0044665F /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D38BDF1DAAA46D0044665F /* Network.swift */; };
 		E1D38BE21DAAA4F70044665F /* Hash2ColorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D38BE11DAAA4F70044665F /* Hash2ColorItem.swift */; };
 		E1D38BE41DAAA52C0044665F /* ColorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D38BE31DAAA52C0044665F /* ColorItem.swift */; };
-		E1D38BE61DAAA5A80044665F /* ExtensionJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D38BE51DAAA5A80044665F /* ExtensionJSON.swift */; };
 		E1F6BE991DAEDFDF008A32C8 /* LiveHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6BE981DAEDFDF008A32C8 /* LiveHash.swift */; };
 		E1F6BEB11DB214AF008A32C8 /* HashTextTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6BEB01DB214AF008A32C8 /* HashTextTable.swift */; };
 /* End PBXBuildFile section */
@@ -66,7 +65,6 @@
 		E1D38BDF1DAAA46D0044665F /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		E1D38BE11DAAA4F70044665F /* Hash2ColorItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hash2ColorItem.swift; sourceTree = "<group>"; };
 		E1D38BE31DAAA52C0044665F /* ColorItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorItem.swift; sourceTree = "<group>"; };
-		E1D38BE51DAAA5A80044665F /* ExtensionJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionJSON.swift; sourceTree = "<group>"; };
 		E1F6BE971DAEDE66008A32C8 /* hash2colors-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "hash2colors-Bridging-Header.h"; sourceTree = "<group>"; };
 		E1F6BE981DAEDFDF008A32C8 /* LiveHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveHash.swift; sourceTree = "<group>"; };
 		E1F6BEB01DB214AF008A32C8 /* HashTextTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashTextTable.swift; sourceTree = "<group>"; };
@@ -144,7 +142,6 @@
 				E1D38BBD1DAAA4130044665F /* Info.plist */,
 				E1D38BE11DAAA4F70044665F /* Hash2ColorItem.swift */,
 				E1D38BE31DAAA52C0044665F /* ColorItem.swift */,
-				E1D38BE51DAAA5A80044665F /* ExtensionJSON.swift */,
 				E1F6BE971DAEDE66008A32C8 /* hash2colors-Bridging-Header.h */,
 			);
 			path = hash2colors;
@@ -231,7 +228,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Maxime;
 				TargetAttributes = {
 					E1D38BAD1DAAA4130044665F = {
@@ -306,7 +303,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1D38BE01DAAA46D0044665F /* Network.swift in Sources */,
-				E1D38BE61DAAA5A80044665F /* ExtensionJSON.swift in Sources */,
 				E1D38BB41DAAA4130044665F /* ViewController.swift in Sources */,
 				E19BC4661DCE23FF009CB533 /* ColorSchemeTableViewCell.swift in Sources */,
 				E1F6BEB11DB214AF008A32C8 /* HashTextTable.swift in Sources */,
@@ -388,6 +384,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -437,6 +434,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

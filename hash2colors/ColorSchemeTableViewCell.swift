@@ -17,14 +17,17 @@ class ColorSchemeTableViewCell: UITableViewCell {
     @IBOutlet var color4: UIView!
     @IBOutlet var label: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    func feed(colorArray : [UIColor], widthArray : [Int]) {
+        color0?.backgroundColor = colorArray[0]
+        color1?.backgroundColor = colorArray[1]
+        color2?.backgroundColor = colorArray[2]
+        color3?.backgroundColor = colorArray[3]
+        color4?.backgroundColor = colorArray[4]
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
+        color0?.constraints[0].constant = CGFloat(widthArray[0])
+        color1?.constraints[0].constant = CGFloat(widthArray[1])
+        color2?.constraints[0].constant = CGFloat(widthArray[2])
+        color3?.constraints[0].constant = CGFloat(widthArray[3])
+        color4?.constraints[0].constant = CGFloat(widthArray[4])
     }
-
 }

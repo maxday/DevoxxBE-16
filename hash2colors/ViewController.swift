@@ -27,11 +27,6 @@ class ViewController: UITableViewController {
             }
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -43,31 +38,17 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DefaultCell")!
-        if let colorCell = cell as? ColorSchemeTableViewCell {
+        if let cellColorScheme = cell as? ColorSchemeTableViewCell {
             let hashString = r?[indexPath.row]
 
             guard let hashColorItem = try? HashColorItem(hash: hashString) else {
                 //log this error
-                return colorCell
+                return cellColorScheme
             }
 
-            
-            
-            
-            
-            let colorArray = hashColorItem.extractColors()
-            let widthArray = hashColorItem.getWidth(maxSize: Float(self.view.bounds.size.width))
-            colorCell.label?.text = r?[indexPath.row]
-            colorCell.color0.backgroundColor = colorArray[0].toUIColor()
-            colorCell.color1.backgroundColor = colorArray[1].toUIColor()
-            colorCell.color2.backgroundColor = colorArray[2].toUIColor()
-            colorCell.color3.backgroundColor = colorArray[3].toUIColor()
-            colorCell.color4.backgroundColor = colorArray[4].toUIColor()
-            colorCell.color0.constraints[0].constant = CGFloat(widthArray[0])
-            colorCell.color1.constraints[0].constant = CGFloat(widthArray[1])
-            colorCell.color2.constraints[0].constant = CGFloat(widthArray[2])
-            colorCell.color3.constraints[0].constant = CGFloat(widthArray[3])
-            colorCell.color4.constraints[0].constant = CGFloat(widthArray[4])
+            let widthArray = hashColorItem.getWidth(maxSize: Float(self.view.bounds.width))
+            let colorArray = hashColorItem.getColors().map({$0.toUIColor()})
+            cellColorScheme.feed(colorArray: colorArray, widthArray: widthArray)
         }
         return cell
     }
