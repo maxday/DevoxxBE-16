@@ -27,6 +27,7 @@ extension Resource {
 }
 
 extension HashColorItem {
+    
     static func getBaseUrl() -> String {
         let uiTesting = ProcessInfo.processInfo.arguments.contains("ui-testing")
         let key = (uiTesting) ? "CFEndpointUrlTest" : "CFEndpointUrl"
@@ -40,10 +41,10 @@ extension HashColorItem {
         guard let dictionaries = json as? [JSONDictionary] else { return nil }
         return dictionaries.map({$0["hash"] as! String})
     })
-        
-    static func add(hashString : String) -> Resource<String> {
+    
+    static func add(baseUrl : String, hashString : String) -> Resource<String> {
         let a = Resource<String>(
-            url: NSURL(string :"\(getBaseUrl())/hash/add/\(hashString)")!,
+            url: NSURL(string :"\(baseUrl)/hash/add/\(hashString)")!,
             parseJSON: {
                 json in
                     guard let dictionary = json as? JSONDictionary else { return nil }

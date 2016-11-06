@@ -26,7 +26,7 @@ class LiveHash: UIViewController, UITextViewDelegate {
 
     @IBAction func saveHashBtn(_ sender: AnyObject) {
         nestedTableViewController.hashTextView.resignFirstResponder()
-        Webservice().load(resource: HashColorItem.add(hashString : (nestedTableViewController.tableView.cellForRow(at: IndexPath(row: 0, section: 1))?.textLabel?.text)!)) { result in
+        Webservice().load(resource: HashColorItem.add(baseUrl : HashColorItem.getBaseUrl(), hashString : (nestedTableViewController.tableView.cellForRow(at: IndexPath(row: 0, section: 1))?.textLabel?.text)!)) { result in
             if result == nil {
                 OperationQueue.main.addOperation {
                     let alert = UIAlertController(title: "Oooops !", message: "An error occured, check your connection and try again", preferredStyle: UIAlertControllerStyle.alert)
