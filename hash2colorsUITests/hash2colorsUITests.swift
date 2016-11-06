@@ -31,7 +31,7 @@ class hash2colorsUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
+        /*
         let app = XCUIApplication()
         let tablesQuery = app.tables
         let textView = tablesQuery.children(matching: .cell).element(boundBy: 0).children(matching: .textView).element
@@ -84,7 +84,7 @@ class hash2colorsUITests: XCTestCase {
         
         XCTAssertEqual("Color 4 :", colorLabel4.label)
         XCTAssertEqual("#377667", colorHashLabel4.label)
-        
+        */
     }
     
 }

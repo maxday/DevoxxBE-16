@@ -24,6 +24,7 @@ class ViewController: UITableViewController {
             self.r = result?.reversed()
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.tableView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: false)
             }
         }
     }
@@ -48,7 +49,7 @@ class ViewController: UITableViewController {
 
             let widthArray = hashColorItem.getWidth(maxSize: Float(self.view.bounds.width))
             let colorArray = hashColorItem.getColors().map({$0.toUIColor()})
-            cellColorScheme.feed(colorArray: colorArray, widthArray: widthArray)
+            cellColorScheme.feed(colorArray: colorArray, widthArray: widthArray, label : hashColorItem.hashString)
         }
         return cell
     }

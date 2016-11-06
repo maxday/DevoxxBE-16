@@ -46,7 +46,7 @@ class LiveHash: UIViewController, UITextViewDelegate {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        hasChanged()
+        nestedTableViewController.hashTextView.resignFirstResponder()
     }
     
     func hasChanged() {
@@ -76,11 +76,10 @@ class LiveHash: UIViewController, UITextViewDelegate {
         cell.textLabel?.text = colorItem.hashString
         let widthArray = colorItem.getWidth(maxSize: Float(self.view.bounds.width))
         let colorArray = colorItem.getColors().map({$0.toUIColor()})
-        cellColorScheme.feed(colorArray: colorArray, widthArray: widthArray)
+        cellColorScheme.feed(colorArray: colorArray, widthArray: widthArray, label : colorItem.hashString)
 
         nestedTableViewController.tableView.reloadData()
         nestedTableViewController.hashTextView.becomeFirstResponder()
- 
     }
     
     override func didReceiveMemoryWarning() {

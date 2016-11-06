@@ -23,19 +23,30 @@ class HashTextTable: UITableViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         hashTextView.textColor = UIColor.lightGray
-        hashTextView.text = "Enter your test here..."
+        hashTextView.text = "Enter your text here..."
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.keyboardDismissMode = .onDrag
     }
     
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        return currentColor != nil
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "viewColorDetail") {
             if let colorDetail = segue.destination as? ColorDetail {
                 
+                guard let currentColor = self.currentColor else {
+                    return
+                }
+                
                 let currentSelectedColorIndex = tableView.indexPathForSelectedRow?.row
-                let currentColor = self.currentColor?.getColors()[currentSelectedColorIndex!].toUIColor()
-                colorDetail.updateBackgroundColor(color: currentColor!)
+                let backGroundColor = currentColor.getColors()[currentSelectedColorIndex!].toUIColor()
+                colorDetail.updateBackgroundColor(color: backGroundColor)
+                
             }
         }
     }
@@ -43,7 +54,7 @@ class HashTextTable: UITableViewController, UITextViewDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         if let cellColor = cell as? ColorCellTableView {
-            cellColor.colorCode.text = "#o"
+            cellColor.colorCode.text = currentColor?.getColorsAsString()[indexPath.row]
             cellColor.colorPreview.backgroundColor = currentColor?.getColors()[indexPath.row].toUIColor()
             cellColor.colorFriendlyName.text = "Color \(indexPath.row) :"
         }

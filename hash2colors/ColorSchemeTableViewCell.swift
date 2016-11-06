@@ -17,7 +17,7 @@ class ColorSchemeTableViewCell: UITableViewCell {
     @IBOutlet var color4: UIView!
     @IBOutlet var label: UILabel!
     
-    func feed(colorArray : [UIColor], widthArray : [Int]) {
+    func feed(colorArray : [UIColor], widthArray : [Int], label : String) {
         color0?.backgroundColor = colorArray[0]
         color1?.backgroundColor = colorArray[1]
         color2?.backgroundColor = colorArray[2]
@@ -29,5 +29,7 @@ class ColorSchemeTableViewCell: UITableViewCell {
         color2?.constraints[0].constant = CGFloat(widthArray[2])
         color3?.constraints[0].constant = CGFloat(widthArray[3])
         color4?.constraints[0].constant = CGFloat(widthArray[4])
+        
+        self.label?.text = label
     }
 }

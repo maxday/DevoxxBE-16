@@ -33,4 +33,54 @@ class hash2colorsTests: XCTestCase {
         }
     }
     
+    func testHash2ColorItemInitIncorrectLength() {
+        do {
+            try _ = HashColorItem(hash: "toto")
+            XCTFail("Should fail")
+        }
+        catch let e as HashColorItem.HashError {
+            XCTAssertEqual(e, HashColorItem.HashError.IncorrectLength)
+        }
+        catch {
+            XCTFail("Wrong error")
+        }
+    }
+    
+    func testHash2ColorItemInitNil() {
+        do {
+            try _ = HashColorItem(hash: nil)
+            XCTFail("Should fail")
+        }
+        catch let e as HashColorItem.HashError {
+            XCTAssertEqual(e, HashColorItem.HashError.Nil)
+        }
+        catch {
+            XCTFail("Wrong error")
+        }
+    }
+    
+    func testHash2ColorItemInitOk() {
+        do {
+            let hashColorItem = try HashColorItem(hash: "aaaaaaaabbbbbbbbccccccccddddddddeeeeeeee")
+            XCTAssertEqual(5, hashColorItem.getColors().count)
+            
+        }
+        catch {
+            XCTFail("Should not fail")
+        }
+    }
+    
+    func testColorItemToColor() {
+        let colorItem = ColorItem(red: 255, green: 255, blue: 255, size: 0)
+        var red: CGFloat = 0.0
+        var green: CGFloat = 0.0
+        var blue: CGFloat = 0.0
+        var alpha: CGFloat = 0.0
+        colorItem.toUIColor().getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        XCTAssertEqual(1, red)
+        XCTAssertEqual(1, green)
+        XCTAssertEqual(1, blue)
+        XCTAssertEqual(1, alpha)
+    }
+    
 }

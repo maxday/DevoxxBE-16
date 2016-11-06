@@ -44,7 +44,7 @@ public struct HashColorItem {
         return size
     }
     
-    private func getColorsAsString() -> [String] {
+    public func getColorsAsString() -> [String] {
         assert(hashString.characters.count == 40, "Incorrect length for hash")
         return stride(from: 0, to: hashString.characters.count, by: 8).map { i -> String in
             let startIndex = hashString.index(hashString.startIndex, offsetBy: i)
