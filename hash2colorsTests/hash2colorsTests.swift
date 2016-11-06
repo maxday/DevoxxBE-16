@@ -35,7 +35,7 @@ class hash2colorsTests: XCTestCase {
     
     func testHash2ColorItemInitIncorrectLength() {
         do {
-            try _ = HashColorItem(hash: "toto")
+            try _ = HashColorItem(hash: "not a valid hash")
             XCTFail("Should fail")
         }
         catch let e as HashColorItem.HashError {
@@ -61,9 +61,13 @@ class hash2colorsTests: XCTestCase {
     
     func testHash2ColorItemInitOk() {
         do {
-            let hashColorItem = try HashColorItem(hash: "aaaaaaaabbbbbbbbccccccccddddddddeeeeeeee")
+            let hashColorItem = try HashColorItem(hash: "aaaaaa02bbbbbb04cccccc02dddddd04eeeeee08")
             XCTAssertEqual(5, hashColorItem.getColors().count)
-            
+            XCTAssertEqual("aaaaaa", hashColorItem.getHexaColorsAsString(index: 0))
+            XCTAssertEqual("bbbbbb", hashColorItem.getHexaColorsAsString(index: 1))
+            XCTAssertEqual("cccccc", hashColorItem.getHexaColorsAsString(index: 2))
+            XCTAssertEqual("dddddd", hashColorItem.getHexaColorsAsString(index: 3))
+            XCTAssertEqual("eeeeee", hashColorItem.getHexaColorsAsString(index: 4))
         }
         catch {
             XCTFail("Should not fail")
@@ -82,5 +86,33 @@ class hash2colorsTests: XCTestCase {
         XCTAssertEqual(1, blue)
         XCTAssertEqual(1, alpha)
     }
+    
+    
+    
+    
+    
+    func testGetAllHashes() {
+        
+        var getAllHashes = HashColorItem.all
+        getAllHashes.url = NSURL(string: "http://127.0.0.1:8080/hash/list")!
+        
+        //let expectationTest = expectation(description: "get the hash list")
+        
+        Webservice().load(resource: getAllHashes) { result in
+            
+            XCTFail()
+            
+            XCTAssertNotNil(result)
+            //expectationTest.fulfill()
+        }
+        
+        /*waitForExpectations(timeout: 10) { error in
+            if let error = error {
+                XCTFail("Error : \(error)")
+            }
+        }*/
+    }
+    
+    
     
 }

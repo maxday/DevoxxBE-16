@@ -49,7 +49,7 @@ class ViewController: UITableViewController {
 
             let widthArray = hashColorItem.getWidth(maxSize: Float(self.view.bounds.width))
             let colorArray = hashColorItem.getColors().map({$0.toUIColor()})
-            cellColorScheme.feed(colorArray: colorArray, widthArray: widthArray, label : hashColorItem.hashString)
+            cellColorScheme.feed(colorArray: colorArray, widthArray: widthArray, label : hashColorItem.getHashString())
         }
         return cell
     }

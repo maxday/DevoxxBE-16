@@ -25,7 +25,7 @@ class LiveHash: UIViewController, UITextViewDelegate {
     var nestedTableViewController:HashTextTable!
 
     @IBAction func saveHashBtn(_ sender: AnyObject) {
-        print("saveBtn clicked")
+        nestedTableViewController.hashTextView.resignFirstResponder()
         Webservice().load(resource: HashColorItem.add(hashString : (nestedTableViewController.tableView.cellForRow(at: IndexPath(row: 0, section: 1))?.textLabel?.text)!)) { result in
             if result == nil {
                 OperationQueue.main.addOperation {
@@ -47,10 +47,10 @@ class LiveHash: UIViewController, UITextViewDelegate {
 
     override func viewDidAppear(_ animated: Bool) {
         nestedTableViewController.hashTextView.resignFirstResponder()
+        hasChanged()
     }
     
     func hasChanged() {
-        print("I've just been changed")
     
         guard let hashString = nestedTableViewController.hashTextView.text else {
             //log this error
@@ -73,13 +73,15 @@ class LiveHash: UIViewController, UITextViewDelegate {
         }
         
         nestedTableViewController.currentColor = colorItem
-        cell.textLabel?.text = colorItem.hashString
+        cell.textLabel?.text = colorItem.getHashString()
         let widthArray = colorItem.getWidth(maxSize: Float(self.view.bounds.width))
         let colorArray = colorItem.getColors().map({$0.toUIColor()})
-        cellColorScheme.feed(colorArray: colorArray, widthArray: widthArray, label : colorItem.hashString)
+        cellColorScheme.feed(colorArray: colorArray, widthArray: widthArray, label : colorItem.getHashString())
 
-        nestedTableViewController.tableView.reloadData()
-        nestedTableViewController.hashTextView.becomeFirstResponder()
+        //nestedTableViewController.tableView.reloadData()
+        //nestedTableViewController.hashTextView.becomeFirstResponder()
+        
+        nestedTableViewController.tableView.reloadSections(NSIndexSet(index: 3) as IndexSet, with: .none)
     }
     
     override func didReceiveMemoryWarning() {
@@ -107,7 +109,6 @@ class LiveHash: UIViewController, UITextViewDelegate {
     
     
     func textViewDidChange(_ textView: UITextView) {
-        print("----------------------------------------\(textView.text)")
         hasChanged()
     }
     

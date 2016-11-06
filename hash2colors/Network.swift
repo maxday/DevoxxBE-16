@@ -12,7 +12,7 @@ import UIKit
 typealias JSONDictionary = [String : Any]
 
 struct Resource<A> {
-    let url: NSURL
+    var url: NSURL
     let parse: (NSData) -> A?
 }
 
@@ -27,14 +27,23 @@ extension Resource {
 }
 
 extension HashColorItem {
-    static let all = Resource<[String]>(url: NSURL(string :"https://hash2colors.herokuapp.com/hash/list")!, parseJSON: { json in
+    static func getBaseUrl() -> String {
+        let uiTesting = ProcessInfo.processInfo.arguments.contains("ui-testing")
+        let key = (uiTesting) ? "CFEndpointUrlTest" : "CFEndpointUrl"
+        if let url = Bundle.main.object(forInfoDictionaryKey: key) as? String {
+            return url
+        }
+        return ""
+    }
+    
+    static let all = Resource<[String]>(url: NSURL(string :"\(getBaseUrl())/hash/list")!, parseJSON: { json in
         guard let dictionaries = json as? [JSONDictionary] else { return nil }
         return dictionaries.map({$0["hash"] as! String})
     })
         
     static func add(hashString : String) -> Resource<String> {
         let a = Resource<String>(
-            url: NSURL(string :"https://hash2colors.herokuapp.com/hash/add/\(hashString)")!,
+            url: NSURL(string :"\(getBaseUrl())/hash/add/\(hashString)")!,
             parseJSON: {
                 json in
                     guard let dictionary = json as? JSONDictionary else { return nil }

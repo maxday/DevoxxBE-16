@@ -10,7 +10,7 @@ import Foundation
 
 public struct HashColorItem {
     
-    let hashString: String
+    private let hashString: String
     private var colors = [ColorItem]()
     private var size = 0
     
@@ -18,11 +18,6 @@ public struct HashColorItem {
         case IncorrectLength
         case Nil
     }
-    
-    /*public init(hashString: String, colors: [ColorItem]) {
-        self.hashString = hashString
-        self.colors = colors
-    }*/
     
     public init(hash: String?) throws {
         guard let hash = hash else {
@@ -44,13 +39,23 @@ public struct HashColorItem {
         return size
     }
     
-    public func getColorsAsString() -> [String] {
+    public func getHashString() -> String {
+        return hashString
+    }
+    
+    private func getColorsAsString() -> [String] {
         assert(hashString.characters.count == 40, "Incorrect length for hash")
         return stride(from: 0, to: hashString.characters.count, by: 8).map { i -> String in
             let startIndex = hashString.index(hashString.startIndex, offsetBy: i)
             let endIndex  = hashString.index(startIndex, offsetBy: 8)
             return hashString[startIndex..<endIndex]
         }
+    }
+    
+    public func getHexaColorsAsString(index : Int) -> String {
+        let currentColor = getColorsAsString()[index]
+        let endIndex  = currentColor.index(currentColor.startIndex, offsetBy: 6)
+        return currentColor.substring(to: endIndex)
     }
     
     private func extractColors() -> [ColorItem] {

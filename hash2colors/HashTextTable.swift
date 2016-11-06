@@ -53,9 +53,14 @@ class HashTextTable: UITableViewController, UITextViewDelegate {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        
+        guard let currentColor = currentColor else {
+            return cell
+        }
+        
         if let cellColor = cell as? ColorCellTableView {
-            cellColor.colorCode.text = currentColor?.getColorsAsString()[indexPath.row]
-            cellColor.colorPreview.backgroundColor = currentColor?.getColors()[indexPath.row].toUIColor()
+            cellColor.colorCode.text = "#\(currentColor.getHexaColorsAsString(index : indexPath.row))"
+            cellColor.colorPreview.backgroundColor = currentColor.getColors()[indexPath.row].toUIColor()
             cellColor.colorFriendlyName.text = "Color \(indexPath.row) :"
         }
         return cell

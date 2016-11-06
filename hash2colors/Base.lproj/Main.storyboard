@@ -256,6 +256,10 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMl-1h-sG2">
                                                             <rect key="frame" x="0.0" y="0.0" width="130" height="43.5"/>
                                                             <color key="backgroundColor" red="1" green="0.64551344990000004" blue="0.40449352849999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <accessibility key="accessibilityConfiguration" label="color0">
+                                                                <accessibilityTraits key="traits" button="YES"/>
+                                                                <bool key="isElement" value="YES"/>
+                                                            </accessibility>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="130" id="oAQ-zN-2FK"/>
                                                             </constraints>
@@ -263,6 +267,10 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNc-yz-SEX">
                                                             <rect key="frame" x="130" y="0.0" width="74" height="43.5"/>
                                                             <color key="backgroundColor" red="1" green="0.45280257270000002" blue="0.431549666" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <accessibility key="accessibilityConfiguration" label="color1">
+                                                                <accessibilityTraits key="traits" button="YES"/>
+                                                                <bool key="isElement" value="YES"/>
+                                                            </accessibility>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="74" id="XY5-Ui-jD1"/>
                                                             </constraints>
@@ -270,6 +278,10 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tyb-1H-X7Z">
                                                             <rect key="frame" x="204" y="0.0" width="68" height="43.5"/>
                                                             <color key="backgroundColor" red="0.54065590969999999" green="1" blue="0.27111527689999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <accessibility key="accessibilityConfiguration" label="color2">
+                                                                <accessibilityTraits key="traits" button="YES"/>
+                                                                <bool key="isElement" value="YES"/>
+                                                            </accessibility>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="68" id="M2O-5k-Hcr"/>
                                                             </constraints>
@@ -277,6 +289,10 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1b-dC-LJQ">
                                                             <rect key="frame" x="272" y="0.0" width="53" height="43.5"/>
                                                             <color key="backgroundColor" red="1" green="0.36959016020000002" blue="0.88406422350000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <accessibility key="accessibilityConfiguration" label="color3">
+                                                                <accessibilityTraits key="traits" button="YES"/>
+                                                                <bool key="isElement" value="YES"/>
+                                                            </accessibility>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="53" id="qwk-UG-gjR"/>
                                                             </constraints>
@@ -284,6 +300,10 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIQ-st-yke">
                                                             <rect key="frame" x="325" y="0.0" width="50" height="43.5"/>
                                                             <color key="backgroundColor" red="0.17453506420000001" green="0.24792372469999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <accessibility key="accessibilityConfiguration" label="color4">
+                                                                <accessibilityTraits key="traits" button="YES"/>
+                                                                <bool key="isElement" value="YES"/>
+                                                            </accessibility>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="50" id="HmK-gR-qtV"/>
                                                             </constraints>

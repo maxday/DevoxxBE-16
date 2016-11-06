@@ -6,14 +6,6 @@
          contextName = "ViewController.(viewDidLoad() -&gt; ()).(closure #1):ViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "Webservice.(load&lt;A&gt; (resource : Resource&lt;A&gt;, completion : (A?) -&gt; ()) -&gt; ()).(closure #1):Network.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "resource.url">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "HashTextTable.tableView(UITableView, willDisplay : UITableViewCell, forRowAt : IndexPath) -&gt; ():HashTextTable.swift">
          <PersistentStrings>
             <PersistentString
@@ -22,7 +14,26 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "Webservice.(load&lt;A&gt; (resource : Resource&lt;A&gt;, completion : (A?) -&gt; ()) -&gt; ()).(closure #1):Network.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "resource.url">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "HashColorItem.init(hash : String) -&gt; HashColorItem:Hash2ColorItem.swift">
+      </ContextState>
+      <ContextState
+         contextName = "hash2colorsUITests.testOK() -&gt; ():hash2colorsUITests.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tablesQuery.staticTexts[&quot;54fd1711209fb1c0781092374132c66e79e2241b&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "staticText">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "LiveHash.viewWillAppear(Bool) -&gt; ():LiveHash.swift">
@@ -42,6 +53,14 @@
       </ContextState>
       <ContextState
          contextName = "HashColorItem.getColorsAsString() -&gt; [String]?:Hash2ColorItem.swift">
+      </ContextState>
+      <ContextState
+         contextName = "hash2colorsUITests.testExample3() -&gt; ():hash2colorsUITests.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Bundle.main.object(forInfoDictionaryKey: &quot;CFEndpointUrl&quot;)">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "LiveHash.prepare(for : UIStoryboardSegue, sender : Any?) -&gt; ():LiveHash.swift">
