@@ -87,74 +87,29 @@ class LiveHash: UIViewController, UITextViewDelegate {
             return
         }
         
-       /* guard
-            let cellColor0 = nestedTableViewController.tableView.cellForRow(at: IndexPath(row: 0, section: 3)) as? ColorCellTableView,
-            let cellColor1 = nestedTableViewController.tableView.cellForRow(at: IndexPath(row: 1, section: 3)) as? ColorCellTableView,
-            let cellColor2 = nestedTableViewController.tableView.cellForRow(at: IndexPath(row: 2, section: 3)) as? ColorCellTableView,
-            let cellColor3 = nestedTableViewController.tableView.cellForRow(at: IndexPath(row: 3, section: 3)) as? ColorCellTableView,
-            let cellColor4 = nestedTableViewController.tableView.cellForRow(at: IndexPath(row: 4, section: 3)) as? ColorCellTableView
-        else {
+        guard let colorItem = try? HashColorItem(hash: hashString.sha1()) else {
             //log this error
             return
         }
-        */
         
-        let colorItem = HashColorItem(hash: hashString.sha1())
         nestedTableViewController.currentColor = colorItem
-        let colorArray = colorItem.extractStringColors(hash: colorItem.hashString, result: [])
-        
-        
-
-        
-        
-        
         cell.textLabel?.text = colorItem.hashString
-    
+        
+        let widthArray = colorItem.getWidth(maxSize: Float(self.view.bounds.width))
+        let colorArray = colorItem.extractColors()
         
         
-        let width0 = Int((Float(colorItem.colors![0].size) * Float(self.view.bounds.width)) / Float(colorItem.totalSize!))
-        let width1 = Int((Float(colorItem.colors![1].size) * Float(self.view.bounds.width)) / Float(colorItem.totalSize!))
-        let width2 = Int((Float(colorItem.colors![2].size) * Float(self.view.bounds.width)) / Float(colorItem.totalSize!))
-        let width3 = Int((Float(colorItem.colors![3].size) * Float(self.view.bounds.width)) / Float(colorItem.totalSize!))
-        let width4 = Int((Float(colorItem.colors![4].size) * Float(self.view.bounds.width)) / Float(colorItem.totalSize!))
-
-        let color0Color = UIColor(colorLiteralRed: Float(colorItem.colors![0].red) / 255,
-                                         green: Float(colorItem.colors![0].green) / 255,
-                                         blue: Float(colorItem.colors![0].blue) / 255,
-                                         alpha: 1.0)
-
-        let color1Color = UIColor(colorLiteralRed: Float(colorItem.colors![1].red) / 255,
-                                         green: Float(colorItem.colors![1].green) / 255,
-                                         blue: Float(colorItem.colors![1].blue) / 255,
-                                         alpha: 1.0)
+        color0.backgroundColor = colorArray[0].toUIColor()
+        color1.backgroundColor = colorArray[1].toUIColor()
+        color2.backgroundColor = colorArray[2].toUIColor()
+        color3.backgroundColor = colorArray[3].toUIColor()
+        color4.backgroundColor = colorArray[4].toUIColor()
         
-        let color2Color = UIColor(colorLiteralRed: Float(colorItem.colors![2].red) / 255,
-                                         green: Float(colorItem.colors![2].green) / 255,
-                                         blue: Float(colorItem.colors![2].blue) / 255,
-                                         alpha: 1.0)
-   
-        let color3Color = UIColor(colorLiteralRed: Float(colorItem.colors![3].red) / 255,
-                                         green: Float(colorItem.colors![3].green) / 255,
-                                         blue: Float(colorItem.colors![3].blue) / 255,
-                                         alpha: 1.0)
-        
-        let color4Color = UIColor(colorLiteralRed: Float(colorItem.colors![4].red) / 255,
-                                         green: Float(colorItem.colors![4].green) / 255,
-                                         blue: Float(colorItem.colors![4].blue) / 255,
-                                         alpha: 1.0)
-        
-
-        color0.backgroundColor = color0Color
-        color1.backgroundColor = color1Color
-        color2.backgroundColor = color2Color
-        color3.backgroundColor = color3Color
-        color4.backgroundColor = color4Color
-        
-        color0.constraints[0].constant = CGFloat(width0)
-        color1.constraints[0].constant = CGFloat(width1)
-        color2.constraints[0].constant = CGFloat(width2)
-        color3.constraints[0].constant = CGFloat(width3)
-        color4.constraints[0].constant = CGFloat(width4)
+        color0.constraints[0].constant = CGFloat(widthArray[0])
+        color1.constraints[0].constant = CGFloat(widthArray[1])
+        color2.constraints[0].constant = CGFloat(widthArray[2])
+        color3.constraints[0].constant = CGFloat(widthArray[3])
+        color4.constraints[0].constant = CGFloat(widthArray[4])
         
         nestedTableViewController.tableView.reloadData()
         nestedTableViewController.hashTextView.becomeFirstResponder()

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E11F0B781DB233D0005BA90B /* ColorCellTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11F0B771DB233D0005BA90B /* ColorCellTableView.swift */; };
 		E177353F1DCE0CC500BB5A2D /* ColorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E177353E1DCE0CC500BB5A2D /* ColorDetail.swift */; };
+		E18EDA0B1DCE415B00DB515B /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = E18EDA091DCE415B00DB515B /* list.png */; };
+		E18EDA0C1DCE415B00DB515B /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = E18EDA0A1DCE415B00DB515B /* add.png */; };
 		E19BC4661DCE23FF009CB533 /* ColorSchemeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19BC4651DCE23FF009CB533 /* ColorSchemeTableViewCell.swift */; };
 		E1D38BB21DAAA4130044665F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D38BB11DAAA4130044665F /* AppDelegate.swift */; };
 		E1D38BB41DAAA4130044665F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D38BB31DAAA4130044665F /* ViewController.swift */; };
@@ -45,6 +47,8 @@
 /* Begin PBXFileReference section */
 		E11F0B771DB233D0005BA90B /* ColorCellTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCellTableView.swift; sourceTree = "<group>"; };
 		E177353E1DCE0CC500BB5A2D /* ColorDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorDetail.swift; sourceTree = "<group>"; };
+		E18EDA091DCE415B00DB515B /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
+		E18EDA0A1DCE415B00DB515B /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		E19BC4651DCE23FF009CB533 /* ColorSchemeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSchemeTableViewCell.swift; sourceTree = "<group>"; };
 		E1D38BAE1DAAA4130044665F /* hash2colors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hash2colors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1D38BB11DAAA4130044665F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +97,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E18EDA081DCE415200DB515B /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				E18EDA091DCE415B00DB515B /* list.png */,
+				E18EDA0A1DCE415B00DB515B /* add.png */,
+			);
+			name = icons;
+			sourceTree = "<group>";
+		};
 		E1D38BA51DAAA4130044665F = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +129,7 @@
 		E1D38BB01DAAA4130044665F /* hash2colors */ = {
 			isa = PBXGroup;
 			children = (
+				E18EDA081DCE415200DB515B /* icons */,
 				E1D38BB11DAAA4130044665F /* AppDelegate.swift */,
 				E1D38BB31DAAA4130044665F /* ViewController.swift */,
 				E1D38BB51DAAA4130044665F /* Main.storyboard */,
@@ -222,6 +236,7 @@
 				TargetAttributes = {
 					E1D38BAD1DAAA4130044665F = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 9XPVZ74VK6;
 						ProvisioningStyle = Automatic;
 					};
 					E1D38BC11DAAA4130044665F = {
@@ -264,6 +279,8 @@
 				E1D38BBC1DAAA4130044665F /* LaunchScreen.storyboard in Resources */,
 				E1D38BB91DAAA4130044665F /* Assets.xcassets in Resources */,
 				E1D38BB71DAAA4130044665F /* Main.storyboard in Resources */,
+				E18EDA0C1DCE415B00DB515B /* add.png in Resources */,
+				E18EDA0B1DCE415B00DB515B /* list.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +465,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9XPVZ74VK6;
 				INFOPLIST_FILE = hash2colors/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maximedavid.hash2colors;
@@ -461,6 +479,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9XPVZ74VK6;
 				INFOPLIST_FILE = hash2colors/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maximedavid.hash2colors;

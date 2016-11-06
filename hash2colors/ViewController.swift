@@ -45,8 +45,17 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DefaultCell")!
         if let colorCell = cell as? ColorSchemeTableViewCell {
             let hashString = r?[indexPath.row]
-            let hashColorItem = HashColorItem(hash: hashString!)
-            let colorArray = hashColorItem.extractColors(hash: hashColorItem.hashString, result: [])
+
+            guard let hashColorItem = try? HashColorItem(hash: hashString) else {
+                //log this error
+                return colorCell
+            }
+
+            
+            
+            
+            
+            let colorArray = hashColorItem.extractColors()
             let widthArray = hashColorItem.getWidth(maxSize: Float(self.view.bounds.size.width))
             colorCell.label?.text = r?[indexPath.row]
             colorCell.color0.backgroundColor = colorArray[0].toUIColor()

@@ -14,15 +14,35 @@ public struct HashColorItem {
     public var colors: [ColorItem]?
     public var totalSize: Int?
     
+    enum HashError: Error {
+        case IncorrectLength
+        case Nil
+    }
+    
     public init(hashString: String, colors: [ColorItem]) {
         self.hashString = hashString
         self.colors = colors
     }
     
-    public init(hash: String) {
+    public init(hash: String?) throws {
+        guard let hash = hash else {
+            throw HashError.Nil
+        }
+        if hash.characters.count != 40 {
+            throw HashError.IncorrectLength
+        }
         self.hashString = hash
-        self.colors = extractColors(hash: hash, result: [])
+        self.colors = extractColors()
         self.totalSize = sumColorSizes()
+    }
+    
+    public func getColorsAsString() -> [String] {
+        assert(hashString.characters.count == 40, "Incorrect length for hash")
+        return stride(from: 0, to: hashString.characters.count, by: 8).map { i -> String in
+            let startIndex = hashString.index(hashString.startIndex, offsetBy: i)
+            let endIndex  = hashString.index(startIndex, offsetBy: 8)
+            return hashString[startIndex..<endIndex]
+        }
     }
     
     public func extractStringColors(hash: String, result: [String]) -> [String] {
@@ -39,30 +59,32 @@ public struct HashColorItem {
         return extractStringColors(hash: hash.substring(from: hash.index(hash.startIndex, offsetBy: 8)), result: addResult)
     }
     
-    public func extractColors(hash: String, result: [ColorItem]) -> [ColorItem] {
-        if hash.characters.count == 0 {
-            return result
-        }
-        let startIndexColor = hash.index(hash.startIndex, offsetBy: 0)
-        let endIndexColor = hash.index(hash.startIndex, offsetBy: 5)
+    public func extractColors() -> [ColorItem] {
         
-        let startIndexAlpha = hash.index(hash.startIndex, offsetBy: 6)
-        let endIndexAlpha = hash.index(hash.startIndex, offsetBy: 7)
+        let colorsAsString = getColorsAsString()
         
-        let color = hash[startIndexColor...endIndexColor];
-        let size = hash[startIndexAlpha...endIndexAlpha];
-
+        var colorItemArray = [ColorItem]()
+        
         var rgbValue:UInt32 = 0
         var sizeValue:UInt32 = 0
-        let a, r, g, b: UInt32
+        var a, r, g, b: UInt32
         
-        Scanner(string: color).scanHexInt32(&rgbValue)
-        Scanner(string: size).scanHexInt32(&sizeValue)
-        (a, r, g, b) = (sizeValue & 0xFF, rgbValue >> 16, rgbValue >> 8 & 0xFF, rgbValue & 0xFF)
+        for color in colorsAsString {
+            let startIndexColor = color.index(color.startIndex, offsetBy: 0)
+            let endIndexColor = color.index(color.startIndex, offsetBy: 6)
+            let startIndexSize = color.index(color.startIndex, offsetBy: 6)
+            let endIndexSize = color.index(color.startIndex, offsetBy: 8)
+            let colorValue = color[startIndexColor..<endIndexColor];
+            let size = color[startIndexSize..<endIndexSize];
+            
+            Scanner(string: colorValue).scanHexInt32(&rgbValue)
+            Scanner(string: size).scanHexInt32(&sizeValue)
+            (a, r, g, b) = (sizeValue & 0xFF, rgbValue >> 16, rgbValue >> 8 & 0xFF, rgbValue & 0xFF)
+            
+            colorItemArray.append(ColorItem(red: r, green: g, blue: b, alpha: a))
+        }
         
-        var addResult = result
-        addResult.append(ColorItem(red: r, green: g, blue: b, alpha: a))
-        return extractColors(hash: hash.substring(from: hash.index(hash.startIndex, offsetBy: 8)), result: addResult)
+        return colorItemArray
     }
     
     public func sumColorSizes() -> Int {

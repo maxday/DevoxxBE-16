@@ -166,11 +166,11 @@
             </objects>
             <point key="canvasLocation" x="-1132" y="-655"/>
         </scene>
-        <!--Item-->
+        <!--Add-->
         <scene sceneID="6sj-l6-CGc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0g6-FX-YnV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="VmL-BJ-186"/>
+                    <tabBarItem key="tabBarItem" title="Add" image="add.png" id="VmL-BJ-186"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ecA-zP-Kwc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -222,15 +222,15 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="SHA1" id="kpl-59-wru">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="b4P-o8-RHc" style="IBUITableViewCellStyleDefault" id="irC-Q9-1Fv">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="b4P-o8-RHc" style="IBUITableViewCellStyleDefault" id="irC-Q9-1Fv">
                                         <rect key="frame" x="0.0" y="162" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="irC-Q9-1Fv" id="uwL-gq-CKP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="cf23df2207d99a74fbe169e3eba035e633b65d94" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b4P-o8-RHc">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -243,11 +243,11 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Palette" id="tJB-er-r6s">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cOw-0p-wf8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="cOw-0p-wf8">
                                         <rect key="frame" x="0.0" y="246" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cOw-0p-wf8" id="i1S-eZ-1Qm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2i-8k-tDh">
@@ -606,11 +606,11 @@
             </objects>
             <point key="canvasLocation" x="3066.4000000000001" y="25.187406296851577"/>
         </scene>
-        <!--Item-->
+        <!--List-->
         <scene sceneID="2Vu-Ha-p7z">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B5w-PT-9mg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="KuK-Ft-FND"/>
+                    <tabBarItem key="tabBarItem" title="List" image="list.png" id="KuK-Ft-FND"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZWi-oX-GNI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -626,6 +626,10 @@
             <point key="canvasLocation" x="-367.19999999999999" y="125.4872563718141"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add.png" width="30" height="30"/>
+        <image name="list.png" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="yzP-Pt-80B"/>
     </inferredMetricsTieBreakers>

@@ -61,7 +61,7 @@ extension Resource {
 
 
 extension HashColorItem {
-    static let all = Resource<[String]>(url: NSURL(string :"http://localhost:8080/hash/list")!, parseJSON: { json in
+    static let all = Resource<[String]>(url: NSURL(string :"https://hash2colors.herokuapp.com/hash/list")!, parseJSON: { json in
         guard let dictionaries = json as? [JSONDictionary] else { return nil }
         var returnArray = [String]()
         for i in dictionaries {
@@ -72,11 +72,9 @@ extension HashColorItem {
         
     static func add(hashString : String) -> Resource<String> {
         let a = Resource<String>(
-            url: NSURL(string :"http://localhost:8080/hash/add/\(hashString)")!,
+            url: NSURL(string :"https://hash2colors.herokuapp.com/hash/add/\(hashString)")!,
             parseJSON: {
                 json in
-                    print("http://localhost:8080/hash/add/\(hashString)")
-                    print(json)
                     guard let dictionary = json as? JSONDictionary else { return nil }
                 return dictionary["hash"] as? String
             }
