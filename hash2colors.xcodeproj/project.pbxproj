@@ -17,31 +17,12 @@
 		E1D38BB71DAAA4130044665F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1D38BB51DAAA4130044665F /* Main.storyboard */; };
 		E1D38BB91DAAA4130044665F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1D38BB81DAAA4130044665F /* Assets.xcassets */; };
 		E1D38BBC1DAAA4130044665F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1D38BBA1DAAA4130044665F /* LaunchScreen.storyboard */; };
-		E1D38BC71DAAA4130044665F /* hash2colorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D38BC61DAAA4130044665F /* hash2colorsTests.swift */; };
-		E1D38BD21DAAA4130044665F /* hash2colorsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D38BD11DAAA4130044665F /* hash2colorsUITests.swift */; };
 		E1D38BE01DAAA46D0044665F /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D38BDF1DAAA46D0044665F /* Network.swift */; };
 		E1D38BE21DAAA4F70044665F /* Hash2ColorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D38BE11DAAA4F70044665F /* Hash2ColorItem.swift */; };
 		E1D38BE41DAAA52C0044665F /* ColorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D38BE31DAAA52C0044665F /* ColorItem.swift */; };
 		E1F6BE991DAEDFDF008A32C8 /* LiveHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6BE981DAEDFDF008A32C8 /* LiveHash.swift */; };
 		E1F6BEB11DB214AF008A32C8 /* HashTextTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6BEB01DB214AF008A32C8 /* HashTextTable.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		E1D38BC31DAAA4130044665F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E1D38BA61DAAA4130044665F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E1D38BAD1DAAA4130044665F;
-			remoteInfo = hash2colors;
-		};
-		E1D38BCE1DAAA4130044665F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E1D38BA61DAAA4130044665F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E1D38BAD1DAAA4130044665F;
-			remoteInfo = hash2colors;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E11F0B771DB233D0005BA90B /* ColorCellTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCellTableView.swift; sourceTree = "<group>"; };
@@ -56,12 +37,6 @@
 		E1D38BB81DAAA4130044665F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1D38BBB1DAAA4130044665F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1D38BBD1DAAA4130044665F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E1D38BC21DAAA4130044665F /* hash2colorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hash2colorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1D38BC61DAAA4130044665F /* hash2colorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hash2colorsTests.swift; sourceTree = "<group>"; };
-		E1D38BC81DAAA4130044665F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E1D38BCD1DAAA4130044665F /* hash2colorsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hash2colorsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1D38BD11DAAA4130044665F /* hash2colorsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hash2colorsUITests.swift; sourceTree = "<group>"; };
-		E1D38BD31DAAA4130044665F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1D38BDF1DAAA46D0044665F /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		E1D38BE11DAAA4F70044665F /* Hash2ColorItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hash2ColorItem.swift; sourceTree = "<group>"; };
 		E1D38BE31DAAA52C0044665F /* ColorItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorItem.swift; sourceTree = "<group>"; };
@@ -72,20 +47,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		E1D38BAB1DAAA4130044665F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E1D38BBF1DAAA4130044665F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E1D38BCA1DAAA4130044665F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -108,8 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				E1D38BB01DAAA4130044665F /* hash2colors */,
-				E1D38BC51DAAA4130044665F /* hash2colorsTests */,
-				E1D38BD01DAAA4130044665F /* hash2colorsUITests */,
 				E1D38BAF1DAAA4130044665F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -118,8 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				E1D38BAE1DAAA4130044665F /* hash2colors.app */,
-				E1D38BC21DAAA4130044665F /* hash2colorsTests.xctest */,
-				E1D38BCD1DAAA4130044665F /* hash2colorsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,24 +104,6 @@
 			path = hash2colors;
 			sourceTree = "<group>";
 		};
-		E1D38BC51DAAA4130044665F /* hash2colorsTests */ = {
-			isa = PBXGroup;
-			children = (
-				E1D38BC61DAAA4130044665F /* hash2colorsTests.swift */,
-				E1D38BC81DAAA4130044665F /* Info.plist */,
-			);
-			path = hash2colorsTests;
-			sourceTree = "<group>";
-		};
-		E1D38BD01DAAA4130044665F /* hash2colorsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E1D38BD11DAAA4130044665F /* hash2colorsUITests.swift */,
-				E1D38BD31DAAA4130044665F /* Info.plist */,
-			);
-			path = hash2colorsUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -185,42 +124,6 @@
 			productReference = E1D38BAE1DAAA4130044665F /* hash2colors.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E1D38BC11DAAA4130044665F /* hash2colorsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E1D38BD91DAAA4130044665F /* Build configuration list for PBXNativeTarget "hash2colorsTests" */;
-			buildPhases = (
-				E1D38BBE1DAAA4130044665F /* Sources */,
-				E1D38BBF1DAAA4130044665F /* Frameworks */,
-				E1D38BC01DAAA4130044665F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E1D38BC41DAAA4130044665F /* PBXTargetDependency */,
-			);
-			name = hash2colorsTests;
-			productName = hash2colorsTests;
-			productReference = E1D38BC21DAAA4130044665F /* hash2colorsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		E1D38BCC1DAAA4130044665F /* hash2colorsUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E1D38BDC1DAAA4130044665F /* Build configuration list for PBXNativeTarget "hash2colorsUITests" */;
-			buildPhases = (
-				E1D38BC91DAAA4130044665F /* Sources */,
-				E1D38BCA1DAAA4130044665F /* Frameworks */,
-				E1D38BCB1DAAA4130044665F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E1D38BCF1DAAA4130044665F /* PBXTargetDependency */,
-			);
-			name = hash2colorsUITests;
-			productName = hash2colorsUITests;
-			productReference = E1D38BCD1DAAA4130044665F /* hash2colorsUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -235,16 +138,6 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 9XPVZ74VK6;
 						ProvisioningStyle = Automatic;
-					};
-					E1D38BC11DAAA4130044665F = {
-						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Automatic;
-						TestTargetID = E1D38BAD1DAAA4130044665F;
-					};
-					E1D38BCC1DAAA4130044665F = {
-						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Automatic;
-						TestTargetID = E1D38BAD1DAAA4130044665F;
 					};
 				};
 			};
@@ -262,8 +155,6 @@
 			projectRoot = "";
 			targets = (
 				E1D38BAD1DAAA4130044665F /* hash2colors */,
-				E1D38BC11DAAA4130044665F /* hash2colorsTests */,
-				E1D38BCC1DAAA4130044665F /* hash2colorsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -278,20 +169,6 @@
 				E1D38BB71DAAA4130044665F /* Main.storyboard in Resources */,
 				E18EDA0C1DCE415B00DB515B /* add.png in Resources */,
 				E18EDA0B1DCE415B00DB515B /* list.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E1D38BC01DAAA4130044665F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E1D38BCB1DAAA4130044665F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,36 +192,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E1D38BBE1DAAA4130044665F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E1D38BC71DAAA4130044665F /* hash2colorsTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E1D38BC91DAAA4130044665F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E1D38BD21DAAA4130044665F /* hash2colorsUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E1D38BC41DAAA4130044665F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E1D38BAD1DAAA4130044665F /* hash2colors */;
-			targetProxy = E1D38BC31DAAA4130044665F /* PBXContainerItemProxy */;
-		};
-		E1D38BCF1DAAA4130044665F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E1D38BAD1DAAA4130044665F /* hash2colors */;
-			targetProxy = E1D38BCE1DAAA4130044665F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E1D38BB51DAAA4130044665F /* Main.storyboard */ = {
@@ -487,60 +335,6 @@
 			};
 			name = Release;
 		};
-		E1D38BDA1DAAA4130044665F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = hash2colorsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.maximedavid.hash2colorsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hash2colors.app/hash2colors";
-			};
-			name = Debug;
-		};
-		E1D38BDB1DAAA4130044665F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = hash2colorsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.maximedavid.hash2colorsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hash2colors.app/hash2colors";
-			};
-			name = Release;
-		};
-		E1D38BDD1DAAA4130044665F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = hash2colorsUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.maximedavid.hash2colorsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = hash2colors;
-			};
-			name = Debug;
-		};
-		E1D38BDE1DAAA4130044665F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = hash2colorsUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.maximedavid.hash2colorsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = hash2colors;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -558,24 +352,6 @@
 			buildConfigurations = (
 				E1D38BD71DAAA4130044665F /* Debug */,
 				E1D38BD81DAAA4130044665F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E1D38BD91DAAA4130044665F /* Build configuration list for PBXNativeTarget "hash2colorsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E1D38BDA1DAAA4130044665F /* Debug */,
-				E1D38BDB1DAAA4130044665F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E1D38BDC1DAAA4130044665F /* Build configuration list for PBXNativeTarget "hash2colorsUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E1D38BDD1DAAA4130044665F /* Debug */,
-				E1D38BDE1DAAA4130044665F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
