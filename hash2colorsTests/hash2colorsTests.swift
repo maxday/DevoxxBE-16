@@ -51,7 +51,7 @@ class hash2colorsTests: XCTestCase {
     
     func testCorrectColors() {
         do {
-            let hash = try HashColorItem(hash: "aaaaaa00bbbbbb00cccccc00dddddd00eeeeee00")
+            let hash = try HashColorItem(hash: "aaaaaa02bbbbbb04cccccc02dddddd04eeeeee02")
             XCTAssertEqual(hash.getHexaColorsAsString(index: 0), "aaaaaa")
             XCTAssertEqual(hash.getHexaColorsAsString(index: 1), "bbbbbb")
             XCTAssertEqual(hash.getHexaColorsAsString(index: 2), "cccccc")
@@ -64,7 +64,7 @@ class hash2colorsTests: XCTestCase {
     }
     
     func testAddHash() {
-        let testHash = "aaaaaa00bbbbbb00cccccc00dddddd00eeeeee00"
+        let testHash = "aaaaaa02bbbbbb04cccccc02dddddd04eeeeee02"
         let addResource = HashColorItem.add(baseUrl:"http://127.0.0.1:8080", hashString:testHash)
         let expectationTest = expectation(description: "add a hash")
         Webservice().load(resource:addResource) { result in

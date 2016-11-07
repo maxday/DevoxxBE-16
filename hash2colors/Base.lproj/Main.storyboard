@@ -258,7 +258,7 @@
                                                             <color key="backgroundColor" red="1" green="0.64551344990000004" blue="0.40449352849999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <accessibility key="accessibilityConfiguration" label="color0">
                                                                 <accessibilityTraits key="traits" button="YES"/>
-                                                                <bool key="isElement" value="YES"/>
+                                                                <bool key="isElement" value="NO"/>
                                                             </accessibility>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="130" id="oAQ-zN-2FK"/>
@@ -269,7 +269,7 @@
                                                             <color key="backgroundColor" red="1" green="0.45280257270000002" blue="0.431549666" alpha="1" colorSpace="calibratedRGB"/>
                                                             <accessibility key="accessibilityConfiguration" label="color1">
                                                                 <accessibilityTraits key="traits" button="YES"/>
-                                                                <bool key="isElement" value="YES"/>
+                                                                <bool key="isElement" value="NO"/>
                                                             </accessibility>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="74" id="XY5-Ui-jD1"/>
@@ -280,7 +280,7 @@
                                                             <color key="backgroundColor" red="0.54065590969999999" green="1" blue="0.27111527689999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <accessibility key="accessibilityConfiguration" label="color2">
                                                                 <accessibilityTraits key="traits" button="YES"/>
-                                                                <bool key="isElement" value="YES"/>
+                                                                <bool key="isElement" value="NO"/>
                                                             </accessibility>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="68" id="M2O-5k-Hcr"/>
@@ -291,7 +291,7 @@
                                                             <color key="backgroundColor" red="1" green="0.36959016020000002" blue="0.88406422350000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <accessibility key="accessibilityConfiguration" label="color3">
                                                                 <accessibilityTraits key="traits" button="YES"/>
-                                                                <bool key="isElement" value="YES"/>
+                                                                <bool key="isElement" value="NO"/>
                                                             </accessibility>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="53" id="qwk-UG-gjR"/>
@@ -302,7 +302,7 @@
                                                             <color key="backgroundColor" red="0.17453506420000001" green="0.24792372469999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <accessibility key="accessibilityConfiguration" label="color4">
                                                                 <accessibilityTraits key="traits" button="YES"/>
-                                                                <bool key="isElement" value="YES"/>
+                                                                <bool key="isElement" value="NO"/>
                                                             </accessibility>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="50" id="HmK-gR-qtV"/>
@@ -591,7 +591,7 @@
                                             <outlet property="colorCode" destination="Bs7-gp-6e9" id="E5R-3B-rff"/>
                                             <outlet property="colorFriendlyName" destination="ibY-q5-g9T" id="ahe-3m-uOy"/>
                                             <outlet property="colorPreview" destination="Rb9-Wa-6Cl" id="Lyz-rY-geo"/>
-                                            <segue destination="6CJ-v0-y10" kind="show" identifier="viewColorDetail" id="MCy-QC-pyG"/>
+                                            <segue destination="6CJ-v0-y10" kind="show" identifier="viewColorDetail_withTypo" id="MCy-QC-pyG"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -653,6 +653,6 @@
         <image name="list.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yzP-Pt-80B"/>
+        <segue reference="MCy-QC-pyG"/>
     </inferredMetricsTieBreakers>
 </document>

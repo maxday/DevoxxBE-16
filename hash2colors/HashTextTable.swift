@@ -31,7 +31,7 @@ class HashTextTable: UITableViewController, UITextViewDelegate {
     
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        return currentColor != nil
+        return currentColor != nil && identifier == "viewColorDetail"
     }
     
     

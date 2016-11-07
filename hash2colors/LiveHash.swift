@@ -46,7 +46,8 @@ class LiveHash: UIViewController, UITextViewDelegate {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        nestedTableViewController.hashTextView.resignFirstResponder()
+        //nestedTableViewController.hashTextView.resignFirstResponder()
+        nestedTableViewController.hashTextView.becomeFirstResponder()
         hasChanged()
     }
     
@@ -78,9 +79,6 @@ class LiveHash: UIViewController, UITextViewDelegate {
         let colorArray = colorItem.getColors().map({$0.toUIColor()})
         cellColorScheme.feed(colorArray: colorArray, widthArray: widthArray, label : colorItem.getHashString())
 
-        //nestedTableViewController.tableView.reloadData()
-        //nestedTableViewController.hashTextView.becomeFirstResponder()
-        
         nestedTableViewController.tableView.reloadSections(NSIndexSet(index: 3) as IndexSet, with: .none)
     }
     
@@ -89,6 +87,10 @@ class LiveHash: UIViewController, UITextViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        nestedTableViewController.hashTextView.delegate = self
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "nestedTableViewController" {
@@ -102,7 +104,7 @@ class LiveHash: UIViewController, UITextViewDelegate {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        nestedTableViewController.hashTextView.delegate = self
+
     }
     
     

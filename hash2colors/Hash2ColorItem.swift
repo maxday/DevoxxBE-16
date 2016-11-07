@@ -87,7 +87,7 @@ public struct HashColorItem {
     }
     
     private func sumColorSizes() -> Int {
-        var r = 0
+        var r = 1
         for i in colors {
             r+=Int(i.size)
         }
@@ -98,6 +98,7 @@ public struct HashColorItem {
         var returnArray = [Int]()
         var currentSummedWidth = 0
         for i in 0...(colors.count)-1 {
+            print(colors[i].size)
             let currentWidth = Int((Float(colors[i].size) * maxSize) / Float(self.size))
             currentSummedWidth += currentWidth
             returnArray.append(currentWidth)
