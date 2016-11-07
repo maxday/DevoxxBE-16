@@ -26,8 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -47,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E1D38BCC1DAAA4130044665F"
+               BlueprintIdentifier = "E1BB0EC91DD0024000090691"
                BuildableName = "hash2colorsUITests.xctest"
                BlueprintName = "hash2colorsUITests"
                ReferencedContainer = "container:hash2colors.xcodeproj">
