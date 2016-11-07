@@ -95,13 +95,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E18EDA081DCE415200DB515B /* icons */ = {
+		E18EDA081DCE415200DB515B /* icon */ = {
 			isa = PBXGroup;
 			children = (
 				E18EDA091DCE415B00DB515B /* list.png */,
 				E18EDA0A1DCE415B00DB515B /* add.png */,
 			);
-			name = icons;
+			name = icon;
 			sourceTree = "<group>";
 		};
 		E1BB0ECB1DD0024000090691 /* hash2colorsUITests */ = {
@@ -111,6 +111,35 @@
 				E1BB0ECE1DD0024000090691 /* Info.plist */,
 			);
 			path = hash2colorsUITests;
+			sourceTree = "<group>";
+		};
+		E1BB0ED41DD132DD00090691 /* customCell */ = {
+			isa = PBXGroup;
+			children = (
+				E11F0B771DB233D0005BA90B /* ColorCellTableView.swift */,
+				E19BC4651DCE23FF009CB533 /* ColorSchemeTableViewCell.swift */,
+			);
+			name = customCell;
+			sourceTree = "<group>";
+		};
+		E1BB0ED51DD1331000090691 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				E1F6BE981DAEDFDF008A32C8 /* LiveHash.swift */,
+				E177353E1DCE0CC500BB5A2D /* ColorDetail.swift */,
+				E1D38BB31DAAA4130044665F /* ViewController.swift */,
+				E1F6BEB01DB214AF008A32C8 /* HashTextTable.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		E1BB0ED61DD1335D00090691 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				E1D38BE11DAAA4F70044665F /* Hash2ColorItem.swift */,
+				E1D38BE31DAAA52C0044665F /* ColorItem.swift */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 		E1CFAECB1DCFCB53007DD457 /* hash2colorsTests */ = {
@@ -145,21 +174,16 @@
 		E1D38BB01DAAA4130044665F /* hash2colors */ = {
 			isa = PBXGroup;
 			children = (
-				E18EDA081DCE415200DB515B /* icons */,
-				E1D38BB11DAAA4130044665F /* AppDelegate.swift */,
-				E1D38BB31DAAA4130044665F /* ViewController.swift */,
 				E1D38BB51DAAA4130044665F /* Main.storyboard */,
-				E177353E1DCE0CC500BB5A2D /* ColorDetail.swift */,
-				E11F0B771DB233D0005BA90B /* ColorCellTableView.swift */,
-				E19BC4651DCE23FF009CB533 /* ColorSchemeTableViewCell.swift */,
-				E1F6BEB01DB214AF008A32C8 /* HashTextTable.swift */,
-				E1F6BE981DAEDFDF008A32C8 /* LiveHash.swift */,
-				E1D38BDF1DAAA46D0044665F /* Network.swift */,
-				E1D38BB81DAAA4130044665F /* Assets.xcassets */,
 				E1D38BBA1DAAA4130044665F /* LaunchScreen.storyboard */,
+				E1D38BB11DAAA4130044665F /* AppDelegate.swift */,
+				E1D38BDF1DAAA46D0044665F /* Network.swift */,
 				E1D38BBD1DAAA4130044665F /* Info.plist */,
-				E1D38BE11DAAA4F70044665F /* Hash2ColorItem.swift */,
-				E1D38BE31DAAA52C0044665F /* ColorItem.swift */,
+				E1BB0ED61DD1335D00090691 /* model */,
+				E1BB0ED51DD1331000090691 /* controller */,
+				E1BB0ED41DD132DD00090691 /* customCell */,
+				E18EDA081DCE415200DB515B /* icon */,
+				E1D38BB81DAAA4130044665F /* Assets.xcassets */,
 				E1F6BE971DAEDE66008A32C8 /* hash2colors-Bridging-Header.h */,
 			);
 			path = hash2colors;
