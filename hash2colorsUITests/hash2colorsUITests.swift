@@ -2,7 +2,7 @@
 //  hash2colorsUITests.swift
 //  hash2colorsUITests
 //
-//  Created by Maxime on 06.11.16.
+//  Created by Maxime on 07.11.16.
 //  Copyright © 2016 Maxime. All rights reserved.
 //
 
@@ -28,5 +28,27 @@ class hash2colorsUITests: XCTestCase {
         super.tearDown()
     }
     
+    func testExample() {
+        let app = XCUIApplication()
+        app.tables.children(matching: .cell).element(boundBy: 0).children(matching: .textView).element.typeText("j")
+        app.navigationBars["Add a hash"].buttons["Save"].tap()
+        app.alerts["Saved !"].buttons["Dismiss"].tap()
         
+    }
+    
+    func testColorDetails() {
+        let app = XCUIApplication()
+        app.tables.staticTexts["Color 0 :"].tap()
+        let back = app.navigationBars["Color detail"].buttons["Add a hash"]
+        back.tap()
+        app.tables.staticTexts["Color 1 :"].tap()
+        back.tap()
+        app.tables.staticTexts["Color 2 :"].tap()
+        back.tap()
+        app.tables.staticTexts["Color 3 :"].tap()
+        back.tap()
+        app.tables.staticTexts["Color 4 :"].tap()
+        back.tap()
+    }
+    
 }
