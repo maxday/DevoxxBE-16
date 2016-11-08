@@ -18,7 +18,7 @@
 		E1D38BB91DAAA4130044665F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1D38BB81DAAA4130044665F /* Assets.xcassets */; };
 		E1D38BBC1DAAA4130044665F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1D38BBA1DAAA4130044665F /* LaunchScreen.storyboard */; };
 		E1D38BE01DAAA46D0044665F /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D38BDF1DAAA46D0044665F /* Network.swift */; };
-		E1D38BE21DAAA4F70044665F /* Hash2ColorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D38BE11DAAA4F70044665F /* Hash2ColorItem.swift */; };
+		E1D38BE21DAAA4F70044665F /* HashColorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D38BE11DAAA4F70044665F /* HashColorItem.swift */; };
 		E1D38BE41DAAA52C0044665F /* ColorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D38BE31DAAA52C0044665F /* ColorItem.swift */; };
 		E1F6BE991DAEDFDF008A32C8 /* LiveHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6BE981DAEDFDF008A32C8 /* LiveHash.swift */; };
 		E1F6BEB11DB214AF008A32C8 /* HashTextTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6BEB01DB214AF008A32C8 /* HashTextTable.swift */; };
@@ -38,7 +38,7 @@
 		E1D38BBB1DAAA4130044665F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1D38BBD1DAAA4130044665F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1D38BDF1DAAA46D0044665F /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		E1D38BE11DAAA4F70044665F /* Hash2ColorItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hash2ColorItem.swift; sourceTree = "<group>"; };
+		E1D38BE11DAAA4F70044665F /* HashColorItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashColorItem.swift; sourceTree = "<group>"; };
 		E1D38BE31DAAA52C0044665F /* ColorItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorItem.swift; sourceTree = "<group>"; };
 		E1F6BE971DAEDE66008A32C8 /* hash2colors-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "hash2colors-Bridging-Header.h"; sourceTree = "<group>"; };
 		E1F6BE981DAEDFDF008A32C8 /* LiveHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveHash.swift; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 		E1BB0ED61DD1335D00090691 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				E1D38BE11DAAA4F70044665F /* Hash2ColorItem.swift */,
+				E1D38BE11DAAA4F70044665F /* HashColorItem.swift */,
 				E1D38BE31DAAA52C0044665F /* ColorItem.swift */,
 			);
 			name = model;
@@ -211,7 +211,7 @@
 				E1D38BE41DAAA52C0044665F /* ColorItem.swift in Sources */,
 				E1F6BE991DAEDFDF008A32C8 /* LiveHash.swift in Sources */,
 				E11F0B781DB233D0005BA90B /* ColorCellTableView.swift in Sources */,
-				E1D38BE21DAAA4F70044665F /* Hash2ColorItem.swift in Sources */,
+				E1D38BE21DAAA4F70044665F /* HashColorItem.swift in Sources */,
 				E177353F1DCE0CC500BB5A2D /* ColorDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

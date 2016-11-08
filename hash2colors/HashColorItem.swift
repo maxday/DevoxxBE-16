@@ -6,6 +6,9 @@
 //
 //
 
+//unit test hash :      aaaaaa10bbbbbb20cccccc30dddddd40eeeeee50
+//unit test addHash :   86f7e437faa5a7fce15d1ddcb9eaeaea377667b8
+
 import Foundation
 
 public struct HashColorItem {
@@ -31,18 +34,7 @@ public struct HashColorItem {
         self.size = sumColorSizes()
     }
     
-    public func getColors() -> [ColorItem] {
-        return colors
-    }
-    
-    public func getSize() -> Int {
-        return size
-    }
-    
-    public func getHashString() -> String {
-        return hashString
-    }
-    
+    //splits the hash into 5 parts of 8 chars
     private func getColorsAsString() -> [String] {
         assert(hashString.characters.count == 40, "Incorrect length for hash")
         return stride(from: 0, to: hashString.characters.count, by: 8).map { i -> String in
@@ -52,6 +44,7 @@ public struct HashColorItem {
         }
     }
     
+    //returns the first 6 chars (the color)
     public func getHexaColorsAsString(index : Int) -> String {
         let currentColor = getColorsAsString()[index]
         let endIndex  = currentColor.index(currentColor.startIndex, offsetBy: 6)
@@ -105,5 +98,17 @@ public struct HashColorItem {
         }
         returnArray.append(Int(maxSize)-currentSummedWidth)
         return returnArray
+    }
+    
+    public func getColors() -> [ColorItem] {
+        return colors
+    }
+    
+    public func getSize() -> Int {
+        return size
+    }
+    
+    public func getHashString() -> String {
+        return hashString
     }
 }
