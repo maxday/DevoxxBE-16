@@ -143,6 +143,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="saveBtn" destination="uJm-wy-2E2" id="S7z-pR-Ogi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ls-Jv-U8K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -591,7 +594,7 @@
                                             <outlet property="colorCode" destination="Bs7-gp-6e9" id="E5R-3B-rff"/>
                                             <outlet property="colorFriendlyName" destination="ibY-q5-g9T" id="ahe-3m-uOy"/>
                                             <outlet property="colorPreview" destination="Rb9-Wa-6Cl" id="Lyz-rY-geo"/>
-                                            <segue destination="6CJ-v0-y10" kind="show" identifier="viewColorDetail_hello" id="MCy-QC-pyG"/>
+                                            <segue destination="6CJ-v0-y10" kind="show" identifier="viewColorDetail_helloDevoxx" id="MCy-QC-pyG"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>

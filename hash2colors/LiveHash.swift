@@ -23,7 +23,8 @@ extension String {
 class LiveHash: UIViewController, UITextViewDelegate {
 
     var nestedTableViewController:HashTextTable!
-
+    @IBOutlet var saveBtn: UIBarButtonItem!
+    
     @IBAction func saveHashBtn(_ sender: AnyObject) {
         nestedTableViewController.hashTextView.resignFirstResponder()
         Webservice().load(resource: HashColorItem.add(baseUrl : HashColorItem.getBaseUrl(), hashString : (nestedTableViewController.tableView.cellForRow(at: IndexPath(row: 0, section: 1))?.textLabel?.text)!)) { result in
@@ -73,6 +74,8 @@ class LiveHash: UIViewController, UITextViewDelegate {
             return
         }
         
+        saveBtn.isEnabled = !hashString.isEmpty
+        
         nestedTableViewController.currentColor = colorItem
         cell.textLabel?.text = colorItem.getHashString()
         let widthArray = colorItem.getWidth(maxSize: Float(self.view.bounds.width))
@@ -89,6 +92,7 @@ class LiveHash: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        saveBtn.isEnabled = false
         nestedTableViewController.hashTextView.delegate = self
     }
     
