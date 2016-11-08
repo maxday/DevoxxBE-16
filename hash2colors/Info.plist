@@ -19,7 +19,7 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>CFEndpointUrl</key>
-	<string>https://hash2colors.herokuapp.com</string>
+	<string>http://127.0.0.1:8080</string>
 	<key>CFEndpointUrlTest</key>
 	<string>http://127.0.0.1:8080</string>
 	<key>LSRequiresIPhoneOS</key>
