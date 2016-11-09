@@ -6,6 +6,8 @@
 //  Copyright © 2016 Maxime. All rights reserved.
 //
 
+// Inspired by a great talk @https://talk.objc.io/episodes/S01E01-networking
+
 import Foundation
 import UIKit
 
