@@ -1,1 +1,82 @@
 # hash2colors-swift-ios
+--
+-----------------------------------------
+- Add a new target
+- Unit Test
+- Check for Swift + Project to be tested
+- Go to Hash2ColorsUnitTests
+- Notice XCTest framework
+- @testable import hash2colors
+- make the test example fail
+-----------------------------------------
+- Go the HashColorItem
+- Explain the init method
+- Copy paste the init method in the test
+- Create a new test testInitNil
+- Make it begin with "test"
+- docatch
+- play it
+- go to test results
+- go to coverage
+- activate coverage
+- play it
+- go to coverage
+-----------------------------------------
+- create testInitIncorrect
+- explain how to run all the tests
+- run all
+- go to coverage
+-----------------------------------------
+- create testInitOK
+- go to see code for color validity
+- check against color validity
+- run it
+- notice that those tests are synchronous
+-----------------------------------------
+- create an asynchrounous test
+- explain the resource struct
+- show the 127.0.0.1/hash/add endpoint
+- call add
+- make the result fail
+- run it -> should success
+- explain why and add expectation
+- run it
+- stop the local server
+- run it
+
+--
+
+-----------------------------------------
+- Add a new target
+- UI Test
+- Check for Swift + Project to be tested
+- Go to Hash2ColorsUITests
+- Notice XCTest framework -> same one
+-----------------------------------------
+- Notice the record button
+- Press the record button
+- Type j
+- Click on add a hash
+- Click on dismiss
+- Stop the record
+- explain children match etc.
+- open the accessibility tools et display the hierarchy
+- explain the rest of the test
+- notice the lack of assertion
+- change dismiss with dismissX
+- launch and watch it fails
+- go to test results and see image
+-----------------------------------------
+- Create a new test and record it
+- Go to color 0, back, color 4, back
+- Watch it fails
+- go to see the image
+- see that the segue is not triggered
+- rename the segue and rerun the run
+- tell thoses test are without explicit assertions
+-----------------------------------------
+- Make a test with explicit assertion
+- paste de test and see explicit assertion
+- run it
+-----------------------------------------
+
