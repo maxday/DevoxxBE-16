@@ -85,11 +85,6 @@ class LiveHash: UIViewController, UITextViewDelegate {
         nestedTableViewController.tableView.reloadSections(NSIndexSet(index: 3) as IndexSet, with: .none)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         saveBtn.isEnabled = false
@@ -106,19 +101,9 @@ class LiveHash: UIViewController, UITextViewDelegate {
         }
     }
     
-    
-    override func viewWillAppear(_ animated: Bool) {
-
-    }
-    
-    
-    
-    
     func textViewDidChange(_ textView: UITextView) {
         hasChanged()
     }
-    
-    
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         guard let sha1Input = nestedTableViewController.hashTextView else {
@@ -142,7 +127,6 @@ class LiveHash: UIViewController, UITextViewDelegate {
         }
     }
 
-    
 }
 
 

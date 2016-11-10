@@ -19,16 +19,12 @@ class hash2colorsTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        XCTAssertTrue(true)
-    }
-    
     func testInitNil() {
         do {
-            try _ = HashColorItem(hash: nil)
+            try _ = ColorScheme(hash: nil)
             XCTFail()
-        } catch let e as HashColorItem.HashError {
-            XCTAssertEqual(e, HashColorItem.HashError.Nil)
+        } catch let e as ColorScheme.HashError {
+            XCTAssertEqual(e, ColorScheme.HashError.Nil)
         } catch {
             XCTFail()
         }
@@ -36,10 +32,10 @@ class hash2colorsTests: XCTestCase {
     
     func testInitLength() {
         do {
-            try _ = HashColorItem(hash: "not a valid hash")
+            try _ = ColorScheme(hash: "not a valid hash")
             XCTFail()
-        } catch let e as HashColorItem.HashError {
-            XCTAssertEqual(e, HashColorItem.HashError.IncorrectLength)
+        } catch let e as ColorScheme.HashError {
+            XCTAssertEqual(e, ColorScheme.HashError.IncorrectLength)
         } catch {
             XCTFail()
         }
@@ -47,12 +43,12 @@ class hash2colorsTests: XCTestCase {
     
     func testInitOK() {
         do {
-            let hash = try HashColorItem(hash: "aaaaaa10bbbbbb20cccccc30dddddd40eeeeee50")
-            XCTAssertEqual(hash.getHexaColorsAsString(index: 0), "aaaaaa")
-            XCTAssertEqual(hash.getHexaColorsAsString(index: 1), "bbbbbb")
-            XCTAssertEqual(hash.getHexaColorsAsString(index: 2), "cccccc")
-            XCTAssertEqual(hash.getHexaColorsAsString(index: 3), "dddddd")
-            XCTAssertEqual(hash.getHexaColorsAsString(index: 4), "eeeeee")
+            let colorScheme = try ColorScheme(hash: "aaaaaa10bbbbbb20cccccc30dddddd40eeeeee50")
+            XCTAssertEqual(colorScheme.getColors()[0].getColorAsString(), "aaaaaa")
+            XCTAssertEqual(colorScheme.getColors()[1].getColorAsString(), "bbbbbb")
+            XCTAssertEqual(colorScheme.getColors()[2].getColorAsString(), "cccccc")
+            XCTAssertEqual(colorScheme.getColors()[3].getColorAsString(), "dddddd")
+            XCTAssertEqual(colorScheme.getColors()[4].getColorAsString(), "eeeeee")
         } catch {
             XCTFail()
         }
@@ -60,7 +56,7 @@ class hash2colorsTests: XCTestCase {
     
     func testAddHash() {
         let hash = "86f7e437faa5a7fce15d1ddcb9eaeaea377667b8"
-        let addResource = HashColorItem.add(baseUrl: "http://127.0.0.1:8080", hashString: hash)
+        let addResource = ColorScheme.add(baseUrl: "http://127.0.0.1:8080", hashString: hash)
         let expect = expectation(description: "add a hash")
         Webservice().load(resource: addResource) { result in
             XCTAssertEqual(result, hash)

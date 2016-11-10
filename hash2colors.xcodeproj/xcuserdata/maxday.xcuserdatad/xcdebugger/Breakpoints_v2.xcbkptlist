@@ -758,7 +758,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
             endingLineNumber = "49"
-            landmarkName = "testColorDetails()"
+            landmarkName = "testListHash()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -791,6 +791,22 @@
             startingLineNumber = "51"
             endingLineNumber = "51"
             landmarkName = "sumColorSizes()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "hash2colors/model/ColorScheme.swift"
+            timestampString = "500511942.334946"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "getWidth(maxSize:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

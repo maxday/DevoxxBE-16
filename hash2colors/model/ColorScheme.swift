@@ -34,14 +34,13 @@ public struct ColorScheme {
         self.size = sumColorSizes()
     }
     
-    //splits the hash into 5 parts of 8 chars
     private func computeColors() -> [Color] {
         assert(hashString.characters.count == 40, "Incorrect length for hash")
         return stride(from: 0, to: hashString.characters.count, by: 8).map { i -> Color in
             let startIndexColor = hashString.index(hashString.startIndex, offsetBy: i)
             let endIndexColor  = hashString.index(startIndexColor, offsetBy: 6)
             let endIndexSize  = hashString.index(startIndexColor, offsetBy: 8)
-            return Color(color: hashString[startIndexColor..<endIndexColor], ratio: hashString[endIndexSize..<endIndexSize])
+            return Color(color: hashString[startIndexColor..<endIndexColor], ratio: hashString[endIndexColor..<endIndexSize])
         }
     }
     
