@@ -59,7 +59,7 @@ class HashTextTable: UITableViewController, UITextViewDelegate {
         }
         
         if let cellColor = cell as? ColorCellTableView {
-            cellColor.colorCode.text = "#\(currentColor.getHexaColorsAsString(index : indexPath.row))"
+            cellColor.colorCode.text = "#\(currentColor.getColors()[indexPath.row].getColorAsString())"
             cellColor.colorPreview.backgroundColor = currentColor.getColors()[indexPath.row].toUIColor()
             cellColor.colorFriendlyName.text = "Color \(indexPath.row) :"
         }
