@@ -20,7 +20,7 @@ class ViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        Webservice().load(resource: HashColorItem.all) { result in
+        Webservice().load(resource: ColorScheme.all) { result in
             self.r = result?.reversed()
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -42,7 +42,7 @@ class ViewController: UITableViewController {
         if let cellColorScheme = cell as? ColorSchemeTableViewCell {
             let hashString = r?[indexPath.row]
 
-            guard let hashColorItem = try? HashColorItem(hash: hashString) else {
+            guard let hashColorItem = try? ColorScheme(hash: hashString) else {
                 //log this error
                 return cellColorScheme
             }

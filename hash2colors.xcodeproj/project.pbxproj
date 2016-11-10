@@ -10,8 +10,7 @@
 		E13C23AD1DD1F65B00322294 /* hash2colorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13C23AC1DD1F65B00322294 /* hash2colorsTests.swift */; };
 		E13C23BB1DD1F8D400322294 /* hash2colorsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13C23BA1DD1F8D400322294 /* hash2colorsUITests.swift */; };
 		E17E3FC71DD2F0E4006F63BE /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E3FC61DD2F0E4006F63BE /* Network.swift */; };
-		E17E3FCA1DD2F0EE006F63BE /* HashColorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E3FC81DD2F0EE006F63BE /* HashColorItem.swift */; };
-		E17E3FCB1DD2F0EE006F63BE /* ColorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E3FC91DD2F0EE006F63BE /* ColorItem.swift */; };
+		E17E3FCA1DD2F0EE006F63BE /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E3FC81DD2F0EE006F63BE /* ColorScheme.swift */; };
 		E17E3FD01DD2F0F9006F63BE /* LiveHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E3FCC1DD2F0F9006F63BE /* LiveHash.swift */; };
 		E17E3FD11DD2F0F9006F63BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E3FCD1DD2F0F9006F63BE /* ViewController.swift */; };
 		E17E3FD21DD2F0F9006F63BE /* HashTextTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E3FCE1DD2F0F9006F63BE /* HashTextTable.swift */; };
@@ -20,7 +19,7 @@
 		E17E3FD71DD2F106006F63BE /* ColorCellTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E3FD51DD2F106006F63BE /* ColorCellTableView.swift */; };
 		E17E3FDA1DD2F113006F63BE /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = E17E3FD81DD2F113006F63BE /* add.png */; };
 		E17E3FDB1DD2F113006F63BE /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = E17E3FD91DD2F113006F63BE /* list.png */; };
-		E17E3FDD1DD4E9F0006F63BE /* HashColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E3FDC1DD4E9F0006F63BE /* HashColor.swift */; };
+		E17E3FDD1DD4E9F0006F63BE /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E3FDC1DD4E9F0006F63BE /* Color.swift */; };
 		E1D38BB21DAAA4130044665F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D38BB11DAAA4130044665F /* AppDelegate.swift */; };
 		E1D38BB71DAAA4130044665F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1D38BB51DAAA4130044665F /* Main.storyboard */; };
 		E1D38BB91DAAA4130044665F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1D38BB81DAAA4130044665F /* Assets.xcassets */; };
@@ -52,8 +51,7 @@
 		E13C23BA1DD1F8D400322294 /* hash2colorsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hash2colorsUITests.swift; sourceTree = "<group>"; };
 		E13C23BC1DD1F8D400322294 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E17E3FC61DD2F0E4006F63BE /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Network.swift; path = service/Network.swift; sourceTree = "<group>"; };
-		E17E3FC81DD2F0EE006F63BE /* HashColorItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HashColorItem.swift; path = model/HashColorItem.swift; sourceTree = "<group>"; };
-		E17E3FC91DD2F0EE006F63BE /* ColorItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorItem.swift; path = model/ColorItem.swift; sourceTree = "<group>"; };
+		E17E3FC81DD2F0EE006F63BE /* ColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorScheme.swift; path = model/ColorScheme.swift; sourceTree = "<group>"; };
 		E17E3FCC1DD2F0F9006F63BE /* LiveHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LiveHash.swift; path = controller/LiveHash.swift; sourceTree = "<group>"; };
 		E17E3FCD1DD2F0F9006F63BE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = controller/ViewController.swift; sourceTree = "<group>"; };
 		E17E3FCE1DD2F0F9006F63BE /* HashTextTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HashTextTable.swift; path = controller/HashTextTable.swift; sourceTree = "<group>"; };
@@ -62,7 +60,7 @@
 		E17E3FD51DD2F106006F63BE /* ColorCellTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorCellTableView.swift; path = customCell/ColorCellTableView.swift; sourceTree = "<group>"; };
 		E17E3FD81DD2F113006F63BE /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = icon/add.png; sourceTree = "<group>"; };
 		E17E3FD91DD2F113006F63BE /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list.png; path = icon/list.png; sourceTree = "<group>"; };
-		E17E3FDC1DD4E9F0006F63BE /* HashColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HashColor.swift; path = model/HashColor.swift; sourceTree = "<group>"; };
+		E17E3FDC1DD4E9F0006F63BE /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = model/Color.swift; sourceTree = "<group>"; };
 		E1D38BAE1DAAA4130044665F /* hash2colors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hash2colors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1D38BB11DAAA4130044665F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1D38BB61DAAA4130044665F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -155,9 +153,8 @@
 		E1BB0ED61DD1335D00090691 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				E17E3FC81DD2F0EE006F63BE /* HashColorItem.swift */,
-				E17E3FC91DD2F0EE006F63BE /* ColorItem.swift */,
-				E17E3FDC1DD4E9F0006F63BE /* HashColor.swift */,
+				E17E3FC81DD2F0EE006F63BE /* ColorScheme.swift */,
+				E17E3FDC1DD4E9F0006F63BE /* Color.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -353,14 +350,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E17E3FCB1DD2F0EE006F63BE /* ColorItem.swift in Sources */,
 				E17E3FD71DD2F106006F63BE /* ColorCellTableView.swift in Sources */,
 				E17E3FC71DD2F0E4006F63BE /* Network.swift in Sources */,
 				E17E3FD61DD2F106006F63BE /* ColorSchemeTableViewCell.swift in Sources */,
 				E17E3FD01DD2F0F9006F63BE /* LiveHash.swift in Sources */,
 				E17E3FD11DD2F0F9006F63BE /* ViewController.swift in Sources */,
-				E17E3FCA1DD2F0EE006F63BE /* HashColorItem.swift in Sources */,
-				E17E3FDD1DD4E9F0006F63BE /* HashColor.swift in Sources */,
+				E17E3FCA1DD2F0EE006F63BE /* ColorScheme.swift in Sources */,
+				E17E3FDD1DD4E9F0006F63BE /* Color.swift in Sources */,
 				E17E3FD21DD2F0F9006F63BE /* HashTextTable.swift in Sources */,
 				E1D38BB21DAAA4130044665F /* AppDelegate.swift in Sources */,
 				E17E3FD31DD2F0F9006F63BE /* ColorDetail.swift in Sources */,

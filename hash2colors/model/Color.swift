@@ -1,5 +1,5 @@
 //
-//  HashColor.swift
+//  Color.swift
 //  hash2colors
 //
 //  Created by Maxime on 10.11.16.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public struct HashColor {
+public struct Color {
     private let color:String
 
     public let red: UInt32

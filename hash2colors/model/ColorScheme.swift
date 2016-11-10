@@ -1,6 +1,6 @@
 //
-//  HashColorItem.swift
-//  Hash2Colors
+//  ColorScheme.swift
+//  hash2Colors
 //
 //  Created by Maxime on 08/10/16.
 //
@@ -11,10 +11,10 @@
 
 import Foundation
 
-public struct HashColorItem {
+public struct ColorScheme {
     
     private let hashString: String
-    private var colors = [HashColor]()
+    private var colors = [Color]()
     private var size = 0
     
     enum HashError: Error {
@@ -35,13 +35,13 @@ public struct HashColorItem {
     }
     
     //splits the hash into 5 parts of 8 chars
-    private func computeColors() -> [HashColor] {
+    private func computeColors() -> [Color] {
         assert(hashString.characters.count == 40, "Incorrect length for hash")
-        return stride(from: 0, to: hashString.characters.count, by: 8).map { i -> HashColor in
+        return stride(from: 0, to: hashString.characters.count, by: 8).map { i -> Color in
             let startIndexColor = hashString.index(hashString.startIndex, offsetBy: i)
             let endIndexColor  = hashString.index(startIndexColor, offsetBy: 6)
             let endIndexSize  = hashString.index(startIndexColor, offsetBy: 8)
-            return HashColor(color: hashString[startIndexColor..<endIndexColor], ratio: hashString[endIndexSize..<endIndexSize])
+            return Color(color: hashString[startIndexColor..<endIndexColor], ratio: hashString[endIndexSize..<endIndexSize])
         }
     }
     
@@ -65,7 +65,7 @@ public struct HashColorItem {
         return returnArray
     }
     
-    public func getColors() -> [HashColor] {
+    public func getColors() -> [Color] {
         return colors
     }
     

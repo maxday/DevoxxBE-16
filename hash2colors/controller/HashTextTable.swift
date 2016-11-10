@@ -19,7 +19,7 @@ class HashTextTable: UITableViewController, UITextViewDelegate {
     @IBOutlet var color3: UIView!
     @IBOutlet var color4: UIView!
     
-    var currentColor:HashColorItem?
+    var currentColor:ColorScheme?
     
     override func viewDidLoad() {
         hashTextView.textColor = UIColor.lightGray

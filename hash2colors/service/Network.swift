@@ -28,7 +28,7 @@ extension Resource {
     }
 }
 
-extension HashColorItem {
+extension ColorScheme {
     
     static func getBaseUrl() -> String {
         let uiTesting = ProcessInfo.processInfo.arguments.contains("ui-testing")
